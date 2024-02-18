@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+
 form {
-  background-color: white;
+  background-color: #F2F4F9;
   padding: 100px;
+  margin-top: 15%;
   border-radius: 10px;
+  top: 0px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,13 +26,14 @@ input {
 
 body {
    /* background-color: #f2f4f9;*/
-    
+  height: 100%;
+   /*height: fixed ;*/
     font-family: 'Quicksand';
     margin: 0;
     display: flex; 
      align-items: center;
      justify-content: center;
-     height: 230vh;
+     
      background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
   }
   h1 {
@@ -47,6 +53,130 @@ body {
             border-radius: 4px;
             cursor: pointer;
         } 
+       
+ 
+
+
+
+.olanglogo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left:30px;
+  object-fit: cover;
+}
+
+
+
+ .olang {
+  position: absolute;
+  width: 220px;
+  height: 90px;
+  top: 10px;
+  left: 90px;
+  font-family: "Prompt";
+  font-weight: 700;
+  color: #212122;
+  font-size: 40px;
+  text-align: center;
+}
+
+div nav{
+  background-color: #f2f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  padding: 70px;
+
+  /*border-radius: 50px;
+  padding: 200px 650px 10px ;*/
+
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0% ;
+  right: 0%;
+  z-index: 1000;
+}
+
+.navbarCenter h6 {
+  position: absolute;
+  top:30px;
+  font-family: "Prompt";
+  font-weight: 500;
+  font-size: 16px;
+ color:#387454;
+transition-property: color;
+transition-duration: .3s;
+}
+
+a:visited, a{
+  text-decoration:none;
+  color:#387454;
+
+}
+
+
+.navbarCenter .Home {
+  left: 500px;
+  
+  }
+  
+
+  .navbarCenter .About {
+  left: 750px;
+   
+ }
+ 
+    
+ .navbarCenter .FAQ {
+ left:1000px;
+    
+}
+    
+ 
+.navbarCenter :hover  {
+      color:#6FBD57;
+    }
+
+
+button{
+  height: 40px;
+  width: 150px;
+  margin: 4px;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: 50px;
+  transition-property: background-color;
+  transition-duration: .3s;
+ border: 1px solid transparent;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  color: #f2f4f9;
+  background-color: #387454;
+  font-family: "Quicksand";  
+  font-weight:600;
+}
+
+
+
+button:hover{
+    color: #f2f4f9;
+    background-color: #6FBD57;
+    border:transparent
+}
+
+
+
+.edit{
+  position: absolute;
+  top: 90px;
+  left: 1040px;
+}       
+         
        
         
          
