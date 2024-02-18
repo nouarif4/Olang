@@ -86,15 +86,18 @@
   <option value="60">60</option>
 </select>
 
+<br>
+
+<br>
 
 <label>Gender: </label> <br>
 
-  <input name="gender"type="radio" >Male<br>
+  <label >Male :<input name = "Gender" type="radio" value="Male"> </label> <br>
    
 
-  <input name="gender"type="radio" >Female<br>
+  <label >Female :<input name = "Gender" type="radio" value="Female"> </label><br>
 
-  <input name="gender"type="radio" checked >Not to Tell <br>
+  <label >Rather not to tell :<input name = "Gender" type="radio" value="Rather not to tell" checked> </label> <br>
          
   <br>
 
