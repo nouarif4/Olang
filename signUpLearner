@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olang</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+ 
+<form>
+ 
+    <center><h2>Welcome Learner ! </h2></center>
+    
+    <h3>Please fill the follow to sign up </h3>
+        <br>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"  required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"  required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"  required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"  required>
+
+    <label for="profilePhoto">Profile Photo (optional):</label>
+<input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city"  required>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required>
+
+    <button type="submit">Sign Up  </button> 
+
+</form>
+
+</body>
+</html>
