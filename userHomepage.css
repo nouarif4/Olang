@@ -20,7 +20,6 @@ body, h1, p, ul, li {
 /* Global styles */
 body {
   font-family: "Prompt";
-  background-color: #f2f4f9;
   background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
 }
 
@@ -69,21 +68,26 @@ header {
 
 .features {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
+  justify-content: space-around;
+  /*space-between;*/
+  margin-top: 80px;
+  margin-bottom: 120px;
+  
 }
 
 .features a { 
   color: #387454;
   text-decoration: none;
+
 }
 
 .feature {
   text-align: center;
-  flex-basis: calc(33.33% - 20px);
+  flex-basis: calc(20.33% - 20px); /*33.33*/
   padding: 20px;
   background-color: #f2f4f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 .feature img {
@@ -199,11 +203,16 @@ footer {
 
   
   /* Styles for form labels */
+
+  h1{
+    color: #387454;;
+  }
   label {
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold;
+    color: #387454;;
   }
   
   /* Styles for text input fields */
@@ -215,6 +224,7 @@ footer {
     box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 16px;
+    color: #387454;;
   }
 
 
@@ -223,6 +233,7 @@ footer {
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color: #387454;;
   }
 
   
@@ -230,7 +241,7 @@ footer {
   input[type="submit"] {
     width: 100%;
     margin-top: 20px;
-    background-color: #ff9a00;
+    background-color: #387454;
     color: rgb(0, 0, 0);
     padding: 12px 20px;
     border: none;
@@ -240,6 +251,15 @@ footer {
   }
   
   input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #6FBD57;
   }
 
+
+  footer{
+    margin-top: auto;
+    width: 100%;
+    height:50px;
+    text-align: center;
+    background:#212122;
+    color:#f2f4f9;
+  }
