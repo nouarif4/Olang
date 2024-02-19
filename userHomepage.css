@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+.olanglogo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left:10px;
+  object-fit: cover;
+}
+
+/* Reset default styles */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: "Prompt";
+  background-color: #f2f4f9;
+  background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
+}
+
+
+
+/*.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}*/
+
+/* Header styles */
+header {
+  background-color: #f2f4f9;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero {
+  text-align: center;
+   margin-top: 35px;
+  color: #387454;
+}
+
+.hero h1 {
+  font-size: 36px;
+  top: 100px;
+  color: #387454;
+}
+/*
+.hero p {
+  font-size: 18px;
+  color: #387454;
+} */
+
+/*.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #387454;
+  color: #f2f4f9;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;}*/
+
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.features a { 
+  color: #387454;
+  text-decoration: none;
+}
+
+.feature {
+  text-align: center;
+  flex-basis: calc(33.33% - 20px);
+  padding: 20px;
+  background-color: #f2f4f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.feature h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #387454;
+}
+
+.feature p {
+  color: #387454;
+}
+
+/*.testimonials {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.testimonial h3 {
+  font-size: 18px;
+} */
+
+/*nav {
+  left: 300;
+  color: #387454;
+}*/
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 1%;
+  padding: 0;
+  color: #387454;
+}
+
+nav ul li {
+  margin-right: 60px;
+}
+
+nav ul li:hover {
+  background-color: #6FBD57;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #387454;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* Footer styles */
+footer {
+  background-color: darkorange;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+/* request */
+
+
+/* Styles for form container */
+.form-container {
+    max-width: 400px;
+    margin: 45px;
+    margin-left: 400px;
+    padding: 20px;
+    background-color: #f2f4f9;
+    border-radius: 5px;
+    
+  }
+
+  
+  /* Styles for form labels */
+  label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Styles for text input fields */
+  input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+
+  input[type="datetime-local"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  
+  /* Styles for submit button */
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ff9a00;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Language Learning Request</title>
+  <link rel="stylesheet" href="userHomepage.css">
+</head>
+<body>
+  <header>
+  <nav>
+    <ul>
+      <li><img class="olanglogo" src="C:\Users\dell\Desktop\SWE\Web\Project\OlangLogo.png" alt="Site Icon" </li>
+      <li><a href="homepage.html">Home</a></li>
+      <li class="profile-dropdown">
+        <a href="#">Session</a>
+        <ul class="dropdown-menu">
+          <li><a href="previousSession.html">Previous Sessions</a></li>
+          <li><a href="currentSession.html">Current Sessions</a></li>
+        </ul>
+      </li>
+      <li class="profile-dropdown">
+        <a href="#">Request</a>
+        <ul class="dropdown-menu">
+          <li><a href="postRequest.html">Post Request</a></li>
+          <li><a href="editRequest.html">Edit Request</a></li>
+          <li><a href="cancelRequest.html">Cancel Request</a></li>
+        </ul>
+      </li>
+      <li class="profile-dropdown">
+        <a href="#">Manage Profile</a>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html">View Profile</a></li>
+          <li><a href="editprofile.html">Edit Profile</a></li>
+          <li><a href="setting.html">Setting</a></li>
+          <li><a href="signout.html">Signout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="form-container">
+  <h1>Language Learning Request</h1>
+  <form action="submitRequest.html" method="post">
+
+   <label>Language:</label>
+    <select name="Language">
+      <option>Select a Language</option>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>German</option>
+      <option>Japanese</option>
+    </select>
+
+    <label>Proficiency Level:</label>
+    <select name="Proficiency">
+      <option value="">Select Proficiency Level</option>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+
+    <label>Preferred Schedule:</label>
+    <input type="datetime-local">
+
+
+      <label>Session duration:</label>
+      <select name="duration">
+      <option>Select Session Duration</option>
+      <option>30 minutes</option>
+      <option >1 hour</option>
+      <option>1 hour and 30 minutes</option>
+      <option>2 hours</option>
+    </select>
+
+    <input type="submit" value="Save Changes">
+
+  </form>
+
+</div>
+</div>
+</body>
+
+
+</html>

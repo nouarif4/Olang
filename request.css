@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+.olanglogo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left:10px;
+  object-fit: cover;
+}
+
+/* Reset default styles */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: "Prompt";
+  background-color: #f2f4f9;
+  background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
+}
+
+/* Header styles */
+header {
+  background-color: #f2f4f9;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 1%;
+  padding: 0;
+  color: #387454;
+}
+
+nav ul li {
+  margin-right: 60px;
+}
+
+nav ul li:hover {
+  background-color: #6FBD57;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #387454;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+
+/* userHomepage.css */
+
+/* Styles for the navigation bar */
+nav {
+  background-color: #f2f2f2;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* request.css */
+/* Styles for the request section */
+.request-section {
+  margin-top: 20px;
+  margin-left: 280px;
+}
+
+.request-section h2 {
+  font-size: 40px;
+  color: #333;
+  margin-left: 165px;
+}
+
+.request-section ul {
+  list-style-type: none;
+  display: flex; 
+  gap: 20px; 
+}
+
+.request-section li {
+  margin-bottom: 10px;
+}
+
+.request-section .-item {
+  border: 2px solid #000000;
+  padding: 10px;
+  height: 240px;
+  width: 35%; /* Set width to 100% for each box */
+  overflow: auto; /* Add scrollbars if content exceeds the height */
+}
+
+.request-section .-header {
+  margin-bottom: 5px;
+}
+
+.request-section .-content {
+  color: #000000;
+}
+
+.request-section .-content p {
+  margin: 560px;
+}
+
+
+
+
+/* Styles for the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+
+input[type="submit"] {
+  width: 25%;
+  margin-top: 20px;
+  background-color: #ff9a00;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
