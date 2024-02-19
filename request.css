@@ -9,20 +9,79 @@
   object-fit: cover;
 }
 
-/* Reset default styles */
+
+div nav{
+  background-color: #f2f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  padding: 70px;
+
+  /*border-radius: 50px;
+  padding: 200px 650px 10px ;*/
+
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0% ;
+  right: 0%;
+  z-index: 1000;
+}
+
+.navbarCenter h6 {
+  position: absolute;
+  top:30px;
+  font-family: "Prompt";
+  font-weight: 500;
+  font-size: 16px;
+ color:#387454;
+transition-property: color;
+transition-duration: .3s;
+}
+
+a:visited, a{
+  text-decoration:none;
+  color:#387454;
+
+}
+
+
+.navbarCenter .Home {
+  left: 500px;
+  
+  }
+  
+
+  .navbarCenter .About {
+  left: 750px;
+   
+ }
+ 
+    
+ .navbarCenter .FAQ {
+ left:1000px;
+    
+}
+    
+ 
+.navbarCenter :hover  {
+      color:#6FBD57;
+    }
+
+
+
+    
+
 body, h1, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
-/* Global styles */
 body {
   font-family: "Prompt";
   background-color: #f2f4f9;
   background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
 }
 
-/* Header styles */
 header {
   background-color: #f2f4f9;
   padding: 20px;
@@ -64,9 +123,6 @@ nav ul li a {
   display: block;
 }
 
-/* userHomepage.css */
-
-/* Styles for the navigation bar */
 nav {
   background-color: #f2f2f2;
 }
@@ -86,21 +142,17 @@ a {
   color: #333;
 }
 
-/* request.css */
-/* Styles for the request section */
 .container {
   margin-top: 20px;
-  margin-left: 280px;
+  margin-left: 60px;
+  text-align: center;
 
 }
 
-.request
-
-.container h2 {
-  font-size: 40px;
+ h2 {
+  font-size: 30px;
   color: #333;
-  margin-left: 165px;
-
+  margin-left: 500px;
   
 }
 
@@ -109,6 +161,7 @@ ul#request-list {
 }
 
 .container ul {
+
   list-style-type: none;
   display: flex; 
   gap: 20px; 
@@ -120,40 +173,18 @@ ul#request-list {
 
 .container .-item {
   border: 2px solid #000000;
+  text-align: center;
 border-radius: 20px;
 background-color: white;
   padding: 10px;
-  height: 240px;
-  width: 35%; /* Set width to 100% for each box */
-  overflow: auto; /* Add scrollbars if content exceeds the height */
+  height: 270px;
+  width: 50%; 
+  overflow: auto; 
 }
 
-.container .-header {
-  margin-bottom: 5px;
-
-}
-
-.container .-content {
-  color: #000000;
-  border-radius: 20px;
-
-
-}
-
-.container .-content p {
-  margin: 560px;
-
-}
-
-/* Styles for the footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 10px;
-  text-align: center;
-}
 
 input[type="submit"] {
-  width: 25%;
+  width: 30%;
   margin-top: 20px;
   background-color: #387454;
   color: rgb(0, 0, 0);
@@ -161,7 +192,7 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 input[type="submit"]:hover {
@@ -176,3 +207,4 @@ footer{
   background:#212122;
   color:#f2f4f9;
 }
+
