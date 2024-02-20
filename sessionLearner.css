@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+body {
+    background-color: #f2f4f9;
+   
+    height: 260vh;
+    min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+       
+        
+        
+    
+    
+}
+
+  
+
+.circular-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid #080808;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 35px;
+    background-color: white;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    width:150px;
+    height: 100px;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-dropdown:hover .dropdown-menu {
+    display: block;
+    color: #00391b;
+  }
+  footer {
+    
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(0, 0, 0); /* Example background color with transparency */
+    color: white; 
+    padding: 5px; 
+    margin-top: auto;
+    position: absolute;
+    top: 1600px;
+    text-align: center;
+    height: 3%;
+  }
+  
+
+.currentsessions{
+position: absolute;
+top: 250px;
+left: 50px;
+background: #dadce0;
+width: 1260px;
+height: 500px;
+border-radius: 50px;
+margin: auto;
+
+}
+h1{
+    position: absolute;
+    top:130px;
+    left:600px;
+    font-family: "Quicksand";
+    font-size: 50px;
+    font-weight: 600;
+    color:#212122;
+    z-index: 200;
+    
+}
+.previoussessions{
+    position: absolute;
+    top: 755px;
+    left: 50px;
+    background: #dadce0;
+    width: 1260px;
+    height: 500px;
+    border-radius: 50px;
+    margin: auto; 
+   
+}
+.profile-picture1{
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 15px;
+    z-index: 1;
+}
+.circular-image1{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid #080808;
+    z-index: 1;
+}
+.currentsessions h2{
+    position:absolute;
+    left: 40px;
+    margin-left: auto;
+    font-family: "Quicksand", Helvetica;
+    font-size: 25pt;
+}
+.currentsessions .circular-image1,.profile-picture1{
+    position:absolute;
+    left: 30px;
+    bottom: 10px;
+    margin-left: auto;
+    width: 65px;
+    height: 65px;
+   
+}
+.currentsessions .circular-image1{
+    border: 2px solid #080808; 
+}
+.date1{
+    position: absolute;
+    left: 150px;
+    top: -25px;
+    background: #f2f4f9;
+    padding: 20px;
+    border-radius: 30px;
+    height: 50px;
+    width: 850px;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Prompt", Helvetica;
+}
+.currentsessions .viewpartner1{
+    position: absolute;
+    left: 1050px;
+    top: -10px;
+}
+ 
+.date2{
+    position: absolute;
+    left: 180px;
+    top: 230px;
+    background: #f2f4f9;
+    padding: 20px;
+    border-radius: 30px;
+    height: 50px;
+    width: 850px;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Prompt", Helvetica;  
+}
+.currentsessions .viewpartner2{
+    position: absolute;
+    left: 1080px;
+    top: 250px;
+}
+.previoussessions h2{
+    position:absolute;
+    left: 40px;
+    margin-left: auto;
+    font-family: "Quicksand", Helvetica;
+    font-size: 25pt;
+}
+.date3{
+    position: absolute;
+    left: 190px;
+    top: 100px;
+    background: #f2f4f9;
+    padding: 20px;
+    border-radius: 30px;
+    height: 50px;
+    width: 850px;
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Prompt", Helvetica;  
+}
+.edit{
+    position: absolute;
+    top: 90px;
+    left: 1040px;
+  }
+  
+  .profile-picture10 {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    left: 1200px;
+    top: 58px;
+}
+
+.circular-image10 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2.5px solid #ea6a40;
+    
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    left: 1250px;
+    top: 87px;
+}
+
+.circular-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2.5px solid #ea6a40;
+    
+}
+.circular-image2,.profile-picture2{
+    position: absolute;
+    top: -100px;
+    left: 0px;
+}
+.previoussessions .circular-image1,.profile-picture1{
+    position: absolute;
+    bottom: 5px;
+    left: 35px;
+}
+.previoussessions .circular-image1{
+    border: 2px solid #080808; 
+}
+.viewpartner6{
+    position: absolute;
+    left: 1090px;
+    top: 120px;
+}
+  
