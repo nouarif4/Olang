@@ -4,28 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Browse Requests</title>
-
-  <link rel="stylesheet" href="Viewrequest.css">
+  <link rel="stylesheet" href="request.css">
+  <link rel="stylesheet" href="styleLearner.css">
+  <link rel="stylesheet" href="navbar2.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><img class="olanglogo" src="OlangLogo.png" alt="Site Icon"></li>
-        <li><a href="partnerHomepage.html">Home</a></li>
-        <li class="profile-dropdown">
-          <a href="#">Profile</a>
-          <ul class="dropdown-menu">
-            <li><a href="viewprofile.html">View Profile</a></li>
-            <li><a href="signout.html">Signout</a></li>
-          </ul>
-      </ul>
-    </nav>
-  </header>
+  <nav class="nav">
+    <img class="olanglogo" src="olanglogo.png">
+    <h3 class="olang">Olang</h3>
+    <div class="navbarCenter">
+        <h6 class="Home"><a href="home.html">Home</a></h6>
+        <h6 class="About"><a href="partnerRequest.html">requests</a></h6>
+        <h6 class="FAQ"><a href="sessionPartner.html">Sessions</a></h6>
+    </div>
+    <ul>
+      <li class="profile-dropdown"><a href="#"> <div class="profile-picture10">
+        <div class="circular-image10" style="background-image: url('profile.png');"></div></a>
+        <ul class="dropdown-menu">
+          <br>
+          <li><a href="viewprofileLearner.html">EDIT PROFILE</a></li>
+          <br>
+          
+          <li><a href="#">SIGN OUT</a></li>
+        </ul></li>
+   
+    </div></nav>
+  
 
   <main>
-    <h2>Requests</h2>
+    <h2>Browse Requests</h2>
     <div class="container">
       <ul id="request-list">
         <li class="-item">

@@ -5,131 +5,100 @@
 
 
 
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Prompt";
+    background: #f2f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  
+  }
+
+.faq {
+    font-family: "Prompt";
+    text-align: center;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #387454;
+    font-size: 20px;
+    margin-bottom: 5px;
+   
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 50%;
+  }
+
 
 .olanglogo {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50px;
-    left:80px;
-    object-fit: cover;
-  }
-  
-  
-  
-   .olang {
-    position: absolute;
-    width: 220px;
-    height: 90px;
-    top: 40px;
-    left: 140px;
-    font-family: "Prompt";
-    font-weight: 700;
-    color: #212122;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  
-  
-  .navbarCenter h6 {
-    position: absolute;
-    top:75px;
-    font-family: "Prompt";
-    font-weight: 500;
-    font-size: 16px;
-   color:#387454;
-  transition-property: color;
-  transition-duration: .3s;
-  }
-  
-  a:visited, a{
-    text-decoration:none;
-    color:#387454;
-  
-  }
-  
-  
-  .navbarCenter .Home {
-    left: 500px;
-    
-    }
-    
-  
-    .navbarCenter .About {
-    left:650px;
-     
-   }
-   
-      
-   .navbarCenter .FAQ {
-   left:800px;
-      
-  }
-      
-   
-  .navbarCenter :hover  {
-        color:#6FBD57;
-      }
-  
-  
-  button{
-    height: 40px;
-    width: 150px;
-    margin: 4px;
-    cursor: pointer;
-    line-height: 1;
-    border-radius: 50px;
-    transition-property: background-color;
-    transition-duration: .3s;
-   border: 1px solid transparent;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
-    color: #f2f4f9;
-    background-color: #387454;
-    font-family: "Prompt";  
-    font-weight:600;
-  }
-  
-  
-  
-  button:hover{
-      color: #f2f4f9;
-      background-color: #6FBD57;
-      border:transparent
-  }
-  
-  
-  
-  .signUpButton{
-    position: absolute;
-    top: 90px;
-    left: 1040px;
-  }
-  
-  
-  .signInButton {
-    position: absolute;
-    top: 90px;
-    left: 1200px;
-  }
-  
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left:10px;
+  object-fit: cover;
+}
+
+
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    background-color: #f2f4f9;
+  display: flex;
+  flex-direction: column;
+  font-family: "Prompt";
+  background: #f2f4f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
 }
-  
+
+main {
+  flex: 1;
+}
 
 
-h2{
-    position: absolute;
-    top:250px;
-    left:650px;
-    font-family: "Quicksand";
-    font-size: 30px;
-    font-weight: 600;
-    color:#212122
-}
+h1 {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 36px;
+    top: 100px;
+    color: #387454;
+  }
+
+  footer{
+    margin-top: auto;
+    width: 100%;
+    height:50px;
+    text-align: center;
+    background:#212122;
+    color:#f2f4f9;
+  }

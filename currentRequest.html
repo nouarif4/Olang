@@ -4,42 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Current Requests</title>
-
   <link rel="stylesheet" href="request.css">
+  <link rel="stylesheet" href="styleLearner.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <header>
+
     
-    <nav>
-      <ul>
-        <li><img class="olanglogo" src="OlangLogo.png" alt="Site Icon"></li>
-        <li><a href="homepage.html">Home</a></li>
-        <li class="profile-dropdown">
-          <a href="#">Session</a>
-          <ul class="dropdown-menu">
-            <li><a href="previousSession.html">Previous Sessions</a></li>
-            <li><a href="currentSession.html">Current Sessions</a></li>
-          </ul>
-        </li>
-        <li class="profile-dropdown">
-          <a href="#">Request</a>
-          <ul class="dropdown-menu">
-            <li><a href="postRequest.html">Post Request</a></li>
-            <li><a href="editRequest.html">Edit Request</a></li>
-            <li><a href="currentRequest.html">Cancel Request</a></li>
-          </ul>
-        </li>
-        <li class="profile-dropdown">
-          <a href="#">Profile</a>
-          <ul class="dropdown-menu">
-            <li><a href="viewprofile.html">View Profile</a></li>
-            <li><a href="signout.html">Signout</a></li>
-          </ul>
-        <li><a href="FAQ.html">FAQ</a></li>
-      </ul>
-    </nav>
-</header>
+  <nav class="nav">
+    <img class="olanglogo" src="olanglogo.png">
+    <h3 class="olang">Olang</h3>
+    <div class="navbarCenter">
+        <h6 class="Home"><a href="home.html">Home</a></h6>
+        <h6 class="About"><a href="learnerRequest.html">requests</a></h6>
+        <h6 class="FAQ"><a href="sessionLearner.html">Sessions</a></h6>
+    </div>
+    <ul>
+      <li class="profile-dropdown"><a href="#"> <div class="profile-picture10">
+        <div class="circular-image10" style="background-image: url('profile.png');"></div></a>
+        <ul class="dropdown-menu">
+          <br>
+          <li><a href="viewprofileLearner.html">EDIT PROFILE</a></li>
+          <br>
+          
+          <li><a href="#">SIGN OUT</a></li>
+        </ul></li>
+   
+    </div></nav>
+
 
   <main>
 
@@ -58,9 +51,10 @@
       </p>
       <br>
       <br>
+      <br>
       <div class="-actions">
-        <a href="editRequest.html" class="button">Edit</a>
-        <a href="editRequest.html" class="button">Cancel</a>
+        <a href="editRequest.html" class="button"><span>Edit</span></a>
+        <a href="editRequest.html" class="button"><span>Cancel</span></a>
       </div>
     </li>
     <li class="-item">
