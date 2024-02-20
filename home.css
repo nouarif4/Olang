@@ -5,16 +5,12 @@
 
 
 
+body{
+  background-color: #f2f4f9;
 
-
-
-
-body {
-    background-color: #f2f4f9;
 }
-  
- 
-  
+
+
  
   .saly {
     position: absolute;
@@ -124,8 +120,11 @@ body {
     position: absolute;
     width: 169px;
     height: 142px;
-    top: 1578px;
-    left: 278px;
+    top: 200px;
+    left: 278px;  
+      transform: rotate(-116.52deg);
+
+
   }
   
  
@@ -134,8 +133,8 @@ body {
     position: absolute;
     width: 20px;
     height: 25px;
-    top: 36px;
-    left: -17px;
+    top: 180px;
+    left: 700px;
     transform: rotate(-116.52deg);
    object-fit: cover;
   }
@@ -144,20 +143,11 @@ body {
     position: absolute;
     width: 77px;
     height: 72px;
-    top: 861px;
-    left: 33px;
+    top: 700px;
+    left: 290px;
     transform: rotate(113.81deg);
   }
   
-  .doodle-32{
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    top: 260px;
-    left: 16px;
-    transform: rotate(-113.81deg);
-    object-fit: cover;
-  }
   
    .doodle-1 {
     position: absolute;
@@ -165,60 +155,32 @@ body {
     height: 90px;
     top: 250px;
     left: 1100px;
-    transform: rotate(-123.9deg);
+    transform: rotate(23.9deg);
   }
   
    .doodle-6 {
     position: absolute;
     width: 30px;
     height: 47px;
-    top: 1100px;
-    left: 160px;
+    top: 200px;
+    left: 200px;
     transform: rotate(200.9deg);
     object-fit: cover;
   }
 
 
 
-  .globe {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    top: 1000px;
-    left: 720px;
-    object-fit: cover;
-  }
 
 
-  .connect-with-people {
-    text-transform: uppercase;
-    position: absolute;
-    top: 1200px;
-    left: 200px;
-    color:#f0a1bf;
-    font-family: "Quicksand";
-    font-weight: 700;
-    font-size: 30px;
-    text-align: center;
   
+  .footer {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    background-color:#212122;
+    color: #f2f4f9;
+    padding: 5px; 
+    align-content: center;
+    justify-content: center;
   }
   
-
-  
-
-footer{
-  width: 100%;
-  height:50px;
-  text-align: center;
-  background:#212122;
-  color:#f2f4f9;
- margin-top: 48px;
- position:absolute;
- bottom: 0;
-
- display: flex;
- justify-content: center;
- text-align: center;
- margin-top: 48px;
-
-}
