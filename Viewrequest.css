@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+
+
+.olanglogo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left:10px;
+  object-fit: cover;
+}
+    
+
+
+
+    body, h1, p, ul, li {
+      font-family: "Prompt";
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: "Prompt";
+      background: #F2F4F9; 
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      align-content: center;
+      background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
+
+    
+    }
+
+header {
+  background-color: #f2f4f9;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 1%;
+  padding: 0;
+  color: #387454;
+}
+
+nav ul li {
+  margin-right: 60px;
+}
+
+nav ul li a:hover {
+  color: #6FBD57;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #387454;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f2f4f9;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+nav {
+  background-color: #f2f2f2;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.container {
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 1%;
+
+}
+
+ h2 {
+  font-size: 30px;
+  color: #f2f4f9;
+text-align: center;}
+
+ul#request-list {
+  margin: auto;
+}
+
+.container ul {
+
+  list-style-type: none;
+  display: flex; 
+  gap: 20px; 
+}
+
+.container li {
+  margin-bottom: 10px;
+}
+
+.container .-item {
+  border: 5px solid transparent;
+  text-align: center;
+  box-shadow: 2px 2px 4px #387454;
+border-radius: 50px;
+background-color: #f2f4f9;
+  padding: 10px;
+  height: 270px;
+  width: 50%; 
+  overflow: auto; 
+}
+
+
+input[type="submit"] {
+  width: 30%;
+  margin-top: 20px;
+  background-color: #387454;
+  color: #F2F4F9;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: "prompt";
+}
+
+input[type="submit"]:hover {
+  background-color: #6FBD57;
+}
+
+/*
+button{
+  width: 30%;
+  margin-top: 30px;
+  background-color: #387454;
+  color: #f2f4f9;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #6FBD57;
+}*/
+
+footer{
+  margin-top: auto;
+  width: 100%;
+  height:50px;
+  text-align: center;
+  background:#212122;
+  color:#f2f4f9;
+}
+
