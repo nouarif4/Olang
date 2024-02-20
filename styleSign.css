@@ -1,11 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
 
 
 form {
   background-color: #F2F4F9;
   padding: 100px;
   margin-top: 15%;
-  border-radius: 10px;
+  margin-bottom: 7%;
+align-items: center;  
+border-radius: 10px;
   top: 0px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -43,20 +48,15 @@ body {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+
+
+
   p {
     color: black;
   }
-  button {
-            background-color: #344E41;
-            color: white;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-family:'Quicksand';
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        } 
-       
+
+
  
 
 
@@ -113,10 +113,15 @@ transition-property: color;
 transition-duration: .3s;
 }
 
-a:visited, a{
+h6 a:visited,h6 a{
   text-decoration:none;
   color:#387454;
+}
 
+
+button a:visited, button a{
+  text-decoration:none;
+  color:#f2f4f9;
 }
 
 
@@ -127,13 +132,13 @@ a:visited, a{
   
 
   .navbarCenter .About {
-  left: 750px;
+  left: 650px;
    
  }
  
     
  .navbarCenter .FAQ {
- left:1000px;
+ left:800px;
     
 }
     

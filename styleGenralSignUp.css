@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+
+
+
 body {
   
   min-height: 100%;
@@ -14,11 +20,14 @@ body {
      justify-content: center;
      
 }
+
+
+
 .skipping-girl-image {
   position: absolute;
   width: 400px;
   height: 400px;
-  top: 150px;
+  top: 270px;
   left: 100px;
   object-fit: cover;
   
@@ -29,9 +38,9 @@ body {
 h3{
   
   position: absolute;
-  top: 200px;
+  top: 300px;
   left: 600px;
-  color:black;
+  color:#212122;
   font-family: "Quicksand";
   font-weight: 700;
   font-size: 35px;
@@ -41,40 +50,80 @@ h3{
 
 form {
   background-color: #F2F4F9;
-  padding: 100px;
-  margin-top: 22%;
+ /* padding: 100px;
+  margin-top: 30%;
   margin-left: 40%;
- 
-  border-radius: 10px;
-  top: 1100px;
-  left:1000px;
+  border-radius: 10px; */
+position:absolute;
+top: 500px;
+left: 700px;
 }
+
+
+
+
+  button, button a:visited{
+    height: 40px;
+    width: 150px;
+    margin: 4px;
+    cursor: pointer;
+    line-height: 1;
+    border-radius: 50px;
+    transition-property: background-color;
+    transition-duration: .3s;
+   border: 1px solid transparent;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    color: #f2f4f9;
+    background-color: #387454;
+    font-family: "Prompt";  
+    font-weight:600;
+    text-decoration:none;
+  }
+
+
 
 
 .button1 {
-  background-color: #344E41;
-  color: white;
+  background-color: #387454;
+  color: #f2f4f9;
   padding: 10px 15px;
-  font-size: 16px;
-  font-family:'Quicksand';
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  top: 300;
-left: 900px;
+  font-family:'Prompt';
+  border-radius: 50px;
+  transition-property: background-color;
+  transition-duration: .3s;
+ border: 1px solid transparent;
+  top: 500px;
+  left: 900px;
+  text-align: center;
+  justify-content: center;
 } 
+
+
+
 .button2 {
-  background-color: #344E41;
-  color: white;
+  background-color: #387454;
+  color: #F2F4F9;
   padding: 10px 15px;
-  font-size: 16px;
   font-family:'Quicksand';
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  top: 300;
+  top: 300px;
 left: 200px;
+font-family:'Prompt';
+border-radius: 50px;
+transition-property: background-color;
+transition-duration: .3s;
+border: 1px solid transparent;
+padding:auto;
 }
+
+
+
 
 .olanglogo {
     position: absolute;
@@ -128,11 +177,32 @@ left: 200px;
   transition-duration: .3s;
   }
   
-  a:visited, a{
+
+
+  h6 a:visited{
     text-decoration:none;
-    color:#387454;
-  
+    color:#387454;  
   }
+
+
+
+  a {
+    text-decoration: none;
+  }
+
+
+
+ button a:visited{
+color:#f2f4f9;
+ }
+
+
+  button:hover{
+    color: #f2f4f9;
+    background-color: #6FBD57;
+    border:transparent
+}
+
   
   
   .navbarCenter .Home {
@@ -142,13 +212,13 @@ left: 200px;
     
   
     .navbarCenter .About {
-    left: 750px;
+    left: 650px;
      
    }
    
       
    .navbarCenter .FAQ {
-   left:1000px;
+   left:800px;
       
   }
       
@@ -158,19 +228,7 @@ left: 200px;
       }
   
   
-  .joinUsButton{
-    position: absolute;
-    top: 520px;
-    left: 920px;
-  }
-  
-  
-  button:hover{
-      color: #f2f4f9;
-      background-color: #6FBD57;
-      border:transparent
-  }
-  
+
   
   
   .edit{
@@ -186,4 +244,6 @@ left: 200px;
   text-align: center;
   background:#212122;
   color:#f2f4f9;
+  position:absolute;
+  bottom:0;
 }

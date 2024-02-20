@@ -8,12 +8,12 @@
 
 
 .olanglogo {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50px;
-    left:80px;
-    object-fit: cover;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left:30px;
+  object-fit: cover;
   }
   
   
@@ -22,8 +22,8 @@
     position: absolute;
     width: 220px;
     height: 90px;
-    top: 40px;
-    left: 140px;
+    top: 10px;
+    left: 90px;
     font-family: "Prompt";
     font-weight: 700;
     color: #212122;
@@ -32,10 +32,28 @@
   }
   
   
+
+  div nav{
+    background-color: #f2f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    padding: 70px;
+  
+    /*border-radius: 50px;
+    padding: 200px 650px 10px ;*/
+  
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0% ;
+    right: 0%;
+    z-index: 1000;
+  }
+  
   
   .navbarCenter h6 {
     position: absolute;
-    top:75px;
+    top:30px;
     font-family: "Prompt";
     font-weight: 500;
     font-size: 16px;
@@ -44,7 +62,7 @@
   transition-duration: .3s;
   }
   
-  a:visited, a{
+   h6 a:visited, h6 a{
     text-decoration:none;
     color:#387454;
   
@@ -74,7 +92,7 @@
       }
   
   
-  button{
+  button, button a:visited{
     height: 40px;
     width: 150px;
     margin: 4px;
@@ -93,28 +111,34 @@
     background-color: #387454;
     font-family: "Prompt";  
     font-weight:600;
+    text-decoration:none;
   }
+
+  a:visited, a:hover, a{
+    text-decoration:none;
+  }
+
+
   
   
-  
-  button:hover{
+ button:hover{
       color: #f2f4f9;
       background-color: #6FBD57;
-      border:transparent
-  }
-  
+      border:transparent;
+  } 
+
   
   
   .signUpButton{
     position: absolute;
-    top: 90px;
+    top: 60px;
     left: 1040px;
   }
   
   
   .signInButton {
     position: absolute;
-    top: 90px;
+    top: 60px;
     left: 1200px;
   }
   
