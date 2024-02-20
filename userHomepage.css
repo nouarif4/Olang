@@ -12,75 +12,26 @@
 }
 
 
-div nav{
-  background-color: #f2f4f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 0px;
-  padding: 70px;
-
-  /*border-radius: 50px;
-  padding: 200px 650px 10px ;*/
-
-  display: flex;
-  position: absolute;
-  top: 0px;
-  left: 0% ;
-  right: 0%;
-  z-index: 1000;
-}
-
-.navbarCenter h6 {
-  position: absolute;
-  top:30px;
-  font-family: "Prompt";
-  font-weight: 500;
-  font-size: 16px;
- color:#387454;
-transition-property: color;
-transition-duration: .3s;
-}
-
-a:visited, a{
-  text-decoration:none;
-  color:#387454;
-
-}
-
-
-.navbarCenter .Home {
-  left: 500px;
-  
-  }
-  
-
-  .navbarCenter .About {
-  left: 750px;
-   
- }
- 
-    
- .navbarCenter .FAQ {
- left:1000px;
-    
-}
-    
- 
-.navbarCenter :hover  {
-      color:#6FBD57;
-    }
-
-
-
-
-
 body, h1, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Prompt";
   background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+}
+
+main {
+  flex: 1;
 }
 
 
@@ -245,12 +196,4 @@ nav ul li a {
     background:#212122;
     color:#f2f4f9;
   }
-
-  footer{
-    margin-top: auto;
-    width: 100%;
-    height:50px;
-    text-align: center;
-    background:#212122;
-    color:#f2f4f9;
-  }
+  
