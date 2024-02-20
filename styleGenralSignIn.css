@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+
+
+
+body {
+  
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+      background-color: #f2f4f9;
+  height: 100%;
+   /*height: fixed ;*/
+    font-family: 'Quicksand';
+    margin: 0;
+    display: flex; 
+     align-items: center;
+     justify-content: center;
+     
+}
+
+
+
+.skipping-girl-image {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 270px;
+  left: 100px;
+  object-fit: cover;
+  
+}
+
+
+
+h3{
+  
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  color:#212122;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+
+}
+
+form {
+  background-color: #F2F4F9;
+ /* padding: 100px;
+  margin-top: 30%;
+  margin-left: 40%;
+  border-radius: 10px; */
+position:absolute;
+top: 500px;
+left: 700px;
+}
+
+
+
+
+  button, button a:visited{
+    height: 40px;
+    width: 150px;
+    margin: 4px;
+    cursor: pointer;
+    line-height: 1;
+    border-radius: 50px;
+    transition-property: background-color;
+    transition-duration: .3s;
+   border: 1px solid transparent;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    color: #f2f4f9;
+    background-color: #387454;
+    font-family: "Prompt";  
+    font-weight:600;
+    text-decoration:none;
+  }
+
+
+
+
+.button1 {
+  background-color: #387454;
+  color: #f2f4f9;
+  padding: 10px 15px;
+  font-family:'Prompt';
+  border-radius: 50px;
+  transition-property: background-color;
+  transition-duration: .3s;
+ border: 1px solid transparent;
+  top: 500px;
+  left: 900px;
+  text-align: center;
+  justify-content: center;
+} 
+
+
+
+.button2 {
+  background-color: #387454;
+  color: #F2F4F9;
+  padding: 10px 15px;
+  font-family:'Quicksand';
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  top: 300px;
+left: 200px;
+font-family:'Prompt';
+border-radius: 50px;
+transition-property: background-color;
+transition-duration: .3s;
+border: 1px solid transparent;
+padding:auto;
+}
+
+
+
+
+.olanglogo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 20px;
+    left:30px;
+    object-fit: cover;
+  }
+  
+  
+  
+   .olang {
+    position: absolute;
+    width: 220px;
+    height: 90px;
+    top: 10px;
+    left: 90px;
+    font-family: "Prompt";
+    font-weight: 700;
+    color: #212122;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  div nav{
+    background-color: #f2f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    padding: 70px;
+  
+    /*border-radius: 50px;
+    padding: 200px 650px 10px ;*/
+  
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0% ;
+    right: 0%;
+    z-index: 1000;
+  }
+  
+  .navbarCenter h6 {
+    position: absolute;
+    top:30px;
+    font-family: "Prompt";
+    font-weight: 500;
+    font-size: 16px;
+   color:#387454;
+  transition-property: color;
+  transition-duration: .3s;
+  }
+  
+
+
+  h6 a:visited{
+    text-decoration:none;
+    color:#387454;  
+  }
+
+
+
+  a {
+    text-decoration: none;
+  }
+
+
+
+ button a:visited{
+color:#f2f4f9;
+ }
+
+
+  button:hover{
+    color: #f2f4f9;
+    background-color: #6FBD57;
+    border:transparent
+}
+
+  
+  
+  .navbarCenter .Home {
+    left: 500px;
+    
+    }
+    
+  
+    .navbarCenter .About {
+    left: 650px;
+     
+   }
+   
+      
+   .navbarCenter .FAQ {
+   left:800px;
+      
+  }
+      
+   
+  .navbarCenter :hover  {
+        color:#6FBD57;
+      }
+  
+  
+
+  
+  
+  .edit{
+    position: absolute;
+    top: 90px;
+    left: 1040px;
+  }   
+
+  footer{
+  margin-top: auto;
+  width: 100%;
+  height:50px;
+  text-align: center;
+  background:#212122;
+  color:#f2f4f9;
+  position:absolute;
+  bottom:0;
+}
