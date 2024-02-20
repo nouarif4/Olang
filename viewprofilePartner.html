@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view profile</title>
+    <link rel="stylesheet" href="stylePartner.css">
+    <link rel="stylesheet" href="navbar2.css">
+</head>
+<body>
+    <div class="site">
+        <nav>
+            <img class="olanglogo" src="olanglogo.png">
+            <h3 class="olang">Olang</h3>
+            <div class="navbarCenter">
+                <h6 class="Home"><a href="home.html">Home</a></h6>
+                <h6 class="About"><a href="About.html">requests</a></h6>
+                <h6 class="FAQ"><a href="FAQ.html">Sessions</a></h6>
+            </div>
+            <ul>
+              <li class="profile-dropdown"><a href="#"> <div class="profile-picture10">
+                <div class="circular-image10" style="background-image: url('profile.png');"></div></a>
+                <ul class="dropdown-menu">
+                  <br>
+                  <li><a href="viewprofileLearner.html">EDIT PROFILE</a></li>
+                  <br>
+                  
+                  <li><a href="#">SIGN OUT</a></li>
+                </ul></li>
+           
+            </div></nav>
+    <form>
+        <h1>Your account</h1>
+        <br>
+        <div class="profile-picture">
+            <div class="circular-image" style="background-image: url('profile.png');"></div></div>
+    <br>
+        
+        <div class="input-grid">
+            <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <input type="file" id="file-upload" name="profilePhoto" accept="image/*" class="file-upload-input">
+                <label for="file-upload" class="edit-btn">Edit Profile image
+            </label></div>
+            <label for="input" style="margin-top: 50px;"> First name <br>
+                <input type="text" class="input-box" value="john"> </label>
+            <br>
+            
+            <label> Last name <br>
+                <input type="text" class="input-box" value="doe"> </label>
+            <br>
+            <label> Email <br>
+                <input type="email" class="input-box" value="john@gmail.com"> </label>
+            <br>
+            <label> Password <br>
+                <input type="password" class="input-box" value="********"> </label>
+            <br>
+            <label> city <br>
+                <input type="text" class="input-box" value="riyadh"> </label>
+            <br>
+            <label for="age">Age </label>
+
+<select name="age" id="age"  >
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+  <option value="32">32</option>
+  <option value="33">33</option>
+  <option value="34">34</option>
+  <option value="35">35</option>
+  <option value="36">36</option>
+  <option value="37">37</option>
+  <option value="38">38</option>
+  <option value="39">39</option>
+  <option value="40">40</option>
+  <option value="41">41</option>
+  <option value="42">42</option>
+  <option value="43">43</option>
+  <option value="44">44</option>
+  <option value="45">45</option>
+  <option value="46">46</option>
+  <option value="47">47</option>
+  <option value="48">48</option>
+  <option value="49">49</option>
+  <option value="50">50</option>
+  <option value="51">51</option>
+  <option value="52">52</option>
+  <option value="53">53</option>
+  <option value="54">54</option>
+  <option value="55">55</option>
+  <option value="56">56</option>
+  <option value="57">57</option>
+  <option value="58">58</option>
+  <option value="59">59</option>
+  <option value="60">60</option>
+</select>
+            <br>
+            <label>Gender </label> 
+            <div class="gender">
+            
+
+  <label >male
+<input name="gender"type="radio" value="male"  checked></label>
+   <label >Female
+                <input name="gender"type="radio" value="Female"  ></label>
+
+                <label >not to tell
+                    <input name="gender"type="radio" value="not to tell"  ></label>
+                </div>
+         
+  <br>
+  <label> Phone number <br>
+    <input type="number" class="input-box" value="0559990550"> </label>
+    <br>
+    <label for="bio">Short bio <br>
+        </label>
+        <textarea name = "bio"
+        rows = "4" cols="40" required> hello i am a partner!</textarea>
+        <br>
+            <button type="submit">edit</button>
+            <button type="delete " class="delete">delete account</button>
+        </div>
+    </form>
+   </div>
+</div> 
+<footer class="footer">
+    &copy; Olang, 2024
+
+</footer>
+</body>
+</html>
