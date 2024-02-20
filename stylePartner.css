@@ -8,7 +8,6 @@ body {
     justify-content: center;
     height: 230vh;
     background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
-    
     flex-direction: column;
     min-height: 100vh;
     
@@ -113,6 +112,8 @@ button {
     position:absolute;
     z-index: -1;
 }
+
+
 .edit-btn:hover{
     background-color: #ccc;
 }
