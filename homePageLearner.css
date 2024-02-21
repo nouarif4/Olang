@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
+
+
+
+.profile-picture {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+body,html{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+.options {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: #e9ebef;
+    border: 1px solid #fff;
+    padding: 5px;
+    display: none;
+    margin: auto;
+    border-radius: 30px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+
+.content{
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+.profile-picture:hover .options {
+    display: block;
+    height: 200px;
+    width: 200px;
+}
+.edit{
+    position: absolute;
+    top: 16px;
+    z-index: 2000;
+    right: 10px;
+}
+.image-gallery{
+    display: flex; /*aligns them*/
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 400px;
+    justify-content: space-around;
+    width: 100%;
+  
+}
+
+
+.image-box{
+    flex: 0 1 auto;
+    margin: 10;
+    background-color: #e9ebef;
+    border-radius: 30px;
+    padding: 125px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.318);
+    position: relative;
+    height: 100%;
+
+}
+.image-box img{
+width: 100px;
+transition: transform 0.3s ease;
+}
+
+
+
+
+.image-box:hover img{
+    transform: translateY(-10px);
+    
+
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: "Quicksand", Helvetica;
+    font-size: 25pt;
+    transform: translate(-50%,-50%);
+    color: #3a3a3a;
+}
+.circular-image10 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2.5px solid #ea6a40;
+    
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    left: 1250px;
+    top: 87px;
+}
+
+h2{
+    text-align: center;
+    color:#ea6a40;
+    font-family: "Prompt";
+    position: absolute;
+    top:270px;
+    left:425px;
+    font-size: 50px;
+}
+
+
+.writine-hand-img{
+    height:30px;
+    width:30px;
+    position:absolute;
+    top:900px;
+    left: 500px;
+
+}
+
+footer {
+    
+    width: 100%;
+    background-color:#212122;
+    color: #f2f4f9;
+    padding: 5px; 
+    text-align: center;
+    position: absolute;
+    bottom:0;
+
+  }
+  

@@ -71,10 +71,14 @@ form .btn .inner{
     background: -webkit-linear-gradient(right,  #344E41);
     transition: all 0.4s;
   }
-  .button {
-    background-color: #04AA6D; /* Green */
+
+
+
+  button {
+    background-color: #387454; /* Green */
     border: none;
     color: white;
+    border-radius: 50px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -143,8 +147,8 @@ footer {
     margin-right: 60px;
   }
   
-  nav ul li:hover {
-    background-color: #6FBD57;
+  nav ul li a:hover {
+    color: #6FBD57;
   }
   
   nav ul li a {
@@ -186,4 +190,9 @@ footer {
   a {
     text-decoration: none;
     color: #333;
+  }
+
+
+  img{
+    margin-left: 10px;
   }
