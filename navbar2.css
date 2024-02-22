@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
 
@@ -11,8 +15,8 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    top: 50px;
-    left:80px;
+    top: 20px;
+    left:30px;
     object-fit: cover;
   }
   
@@ -22,8 +26,8 @@
     position: absolute;
     width: 220px;
     height: 90px;
-    top: 40px;
-    left: 140px;
+    top: 10px;
+    left: 90px;
     font-family: "Prompt";
     font-weight: 700;
     color: #212122;
@@ -34,18 +38,23 @@
   div nav{
     background-color: #f2f4f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    padding: 200px 650px 10px ;
+    border-radius: 0px;
+    padding: 70px;
+  
+    /*border-radius: 50px;
+    padding: 200px 650px 10px ;*/
+  
     display: flex;
     position: absolute;
-    top: 10px;
-    left: 2%;
+    top: 0px;
+    left: 0% ;
+    right: 0%;
     z-index: 1000;
   }
   
   .navbarCenter h6 {
     position: absolute;
-    top:75px;
+    top:30px;
     font-family: "Prompt";
     font-weight: 500;
     font-size: 16px;
@@ -101,7 +110,7 @@
     justify-content: center;
     color: #f2f4f9;
     background-color: #387454;
-    font-family: "Prompt";  
+    font-family: "Quicksand";  
     font-weight:600;
   }
   
@@ -119,5 +128,21 @@
     position: absolute;
     top: 90px;
     left: 1040px;
-  }
-  
+  }       
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.circular-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid #080808;
+    position: absolute;
+    bottom: 30px;
+}
+

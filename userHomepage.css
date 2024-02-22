@@ -63,6 +63,8 @@ header {
   background-color: #f2f4f9;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height:120px;
+  width:100%;
 }
 
 
