@@ -169,19 +169,56 @@ body{
   }
 
 
-
-
-
-  
-  .footer {
-
-    width: 100%;
-    background-color:#212122;
-    color: #f2f4f9;
-    padding: 5px; 
-    text-align: center;
-    justify-content: center;
+  .signUpButton{
     position: absolute;
-    top:100%;
+    top: 60px;
+    left: 1040px;
   }
   
+  
+  .signInButton {
+    position: absolute;
+    top: 60px;
+    left: 1200px;
+  }
+
+
+
+  button {
+    height: 40px;
+    width: 100%;
+    margin: 4px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: #387454;
+    color: #f2f4f9;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  button:hover {
+    background-color: #6FBD57;
+  }
+  
+button a:visited, button a:visited{
+  text-decoration:none;
+}
+
+
+
+
+
+
+footer {
+  clear: both; /* Clear floats to ensure the footer stays below other elements */
+  position: relative; /* Set position to relative */
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #212122;
+  color: #f2f4f9;
+  padding-top: 15px;
+  margin-top: auto; /* Push footer to the end of the page */
+}

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
 
 
-
+/* 
 form {
   background-color: #F2F4F9;
   padding: 100px;
@@ -33,10 +33,9 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-     /* background-color: #f2f4f9;*/
   height: 100%;
    /*height: fixed ;*/
-    font-family: 'Quicksand';
+    /* font-family: 'Quicksand';
     margin: 0;
     display: flex; 
      align-items: center;
@@ -61,18 +60,9 @@ body {
 
 
 
-.olanglogo {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 20px;
-  left:30px;
-  object-fit: cover;
-}
 
 
-
- .olang {
+  .olang {
   position: absolute;
   width: 220px;
   height: 90px;
@@ -90,32 +80,12 @@ div nav{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 0px;
   padding: 70px;
-
-  /*border-radius: 50px;
-  padding: 200px 650px 10px ;*/
-
   display: flex;
   position: absolute;
   top: 0px;
   left: 0% ;
   right: 0%;
   z-index: 1000;
-}
-
-.navbarCenter h6 {
-  position: absolute;
-  top:30px;
-  font-family: "Prompt";
-  font-weight: 500;
-  font-size: 16px;
- color:#387454;
-transition-property: color;
-transition-duration: .3s;
-}
-
-h6 a:visited,h6 a{
-  text-decoration:none;
-  color:#387454;
 }
 
 
@@ -192,9 +162,159 @@ footer{
   text-align: center;
   background:#212122;
   color:#f2f4f9;
+} */
+
+  /* Resetting default margins and paddings */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-         
-       
-        
-         
+
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#d66f1b, #f2f4f9);
+  margin: 0; /* Ensure no default margin */
+  padding: 0; /* Ensure no default padding */
+}
+
+
+form {
+  background-color: #f2f4f9;
+  padding: 20px;
+margin-top: 150px;
+margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, select, textarea {
+  width: calc(100% - 16px); /* Adjusting width to account for padding */
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  height: 40px;
+  width: 100%;
+  margin: 4px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  background-color: #387454;
+  color: #f2f4f9;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #6FBD57;
+}
+
+
+
+
+footer {
+  clear: both; /* Clear floats to ensure the footer stays below other elements */
+  position: relative; /* Set position to relative */
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #212122;
+  color: #f2f4f9;
+  padding-top: 15px;
+  margin-top: auto; /* Push footer to the end of the page */
+}
+
+
+
+
+
+.navbar {
+  background-color: #f2f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure navbar spans the full width of the viewport */
+  position: fixed; /* Fixed positioning to keep it at the top */
+  top: 0;
+  z-index: 1000; 
+}
+
+
+
+
+.navbar .nav-links {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  position: relative;
+  top:10px;
+  font-size: 20px;
+  gap: 20px; /* Add this line to increase spacing between nav links */
+}
+
+
+.navbar .nav-links h6 {
+  margin: 0 10px  /* Adjusted margin for better spacing */
+}
+
+
+.navbar .nav-links h6 a {
+  text-decoration: none;
+  color: #387454;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links h6 a:hover {
+  color: #6fbd57;
+}
+
+
+
+.olanglogo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 20px;
+  left:30px;
+  object-fit: cover;
+  margin-right: auto;
+}
+
+.olang {
+  position: absolute;
+  /* width: 220px;
+  height: 90px; */
+  top: 35px;
+  left: 120px;
+  font-family: "Prompt";
+  font-weight: 700;
+  color: #212122;
+  font-size: 40px;
+  text-align: center;
+}
+
