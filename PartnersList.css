@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
 
-
+/* 
 
 * {
     margin: 0;
@@ -75,7 +75,7 @@ form .btn .inner{
 
 
   button {
-    background-color: #387454; /* Green */
+    background-color: #387454; 
     border: none;
     color: white;
     border-radius: 50px;
@@ -118,11 +118,10 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgb(0, 0, 0); /* Example background color with transparency */
+    background-color: rgb(0, 0, 0); /* Example background color with transparency 
     color: white; 
     padding: 5px; 
   }
-  /* Header styles */
 
   header {
     position: absolute;
@@ -170,9 +169,7 @@ footer {
     display: block;
   }
   
-  /* userHomepage.css */
-  
-  /* Styles for the navigation bar */
+
   nav {
     background-color: #f2f2f2;
   }
@@ -195,4 +192,133 @@ footer {
 
   img{
     margin-left: 10px;
-  }
+  } */
+
+
+  /* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
+}
+
+/* Main container styles */
+.main-container {
+  background: #fff;
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 20px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+  overflow: auto;
+  width: 700px;
+  height: 500px;
+}
+
+/* Header styles */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #f2f4f9;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 1%;
+  padding: 0;
+  color: #387454;
+}
+
+nav ul li {
+  margin-right: 60px;
+}
+
+nav ul li a:hover {
+  color: #6FBD57;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #387454;
+}
+
+.profile-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Team member styles */
+.members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  margin: 8px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.team-member:hover {
+  transform: scale(1.1);
+}
+
+.team-member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.team-member h4, .team-member p {
+  text-align: center;
+  font-size: 12px;
+  margin: 7px;
+}
+
+/* Button styles */
+button {
+  background-color: #387454;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* Footer styles */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white; 
+  padding: 5px; 
+}
