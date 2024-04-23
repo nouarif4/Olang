@@ -170,6 +170,14 @@ input[type="submit"]:hover {
   color: black;
 }
 
+.reject-button {
+  background-color: red !important;
+}
+
+.reject-button:hover {
+  background-color: #ff6a6a !important;
+}
+
 footer{
   margin-top: auto;
   width: 100%;
