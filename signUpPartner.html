@@ -1,133 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="styleSign.css">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olang</title>
-    
-    
-</head>
-
-<body>
-   
-    <div class="top-nav">
-        <nav>
-            <img class="olanglogo" src="olanglogo.png" />
-            <h3 class="olang">Olang</h3>
-            <div class="navbarCenter">
-             <h6 class="Home"><a href="home.html">Home</a></h6>
-             <h6 class="About"><a href="About.html">About</a></h6>
-             <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
-            </div>
-            
-          </nav></div>
-        </div >
-
-    <form>
-    
-        <center><h2>Welcome Partner ! </h2></center>
-    
-        <center><h3>Please fill the follow to sign up </h3></center>
-        <br>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-    
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
-
-
-        <label for="age">age :</label>
-        <select name="age" id="age" required>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-            <option value="32">32</option>
-            <option value="33">33</option>
-            <option value="34">34</option>
-            <option value="35">35</option>
-            <option value="36">36</option>
-            <option value="37">37</option>
-            <option value="38">38</option>
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
-            <option value="46">46</option>
-            <option value="47">47</option>
-            <option value="48">48</option>
-            <option value="49">49</option>
-            <option value="50">50</option>
-            <option value="51">51</option>
-            <option value="52">52</option>
-            <option value="53">53</option>
-            <option value="54">54</option>
-            <option value="55">55</option>
-            <option value="56">56</option>
-            <option value="57">57</option>
-            <option value="58">58</option>
-            <option value="59">59</option>
-            <option value="60">60</option>
-        </select>
-
-
-<br>
-
-<br>
-
-<label>Gender: </label> <br>
-<label>Male: <input name="gender" type="radio" value="male"></label> <br>
-<label>Female: <input name="gender" type="radio" value="female"></label><br>
-<label>Rather not to tell: <input name="gender" type="radio" value="rather-not-tell"></label> <br>
-
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="profilePhoto">Profile Photo (optional):</label>
-    <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
-    
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required >
-    
-        <label for="phone Number">Phone Number:</label>
-        <input type="text" id="phone Number" name="phone Number" required >
-    
-        
-        <label for="bio">Short bio <br>
-            (languages spoken , cultural knowledge) : <br></label>
-            <textarea name = "bio"
-            rows = "4" cols="40" required> Enter short bio :</textarea>
-    
-            <label for="city">City:</label>
-        <input type="text" id="city" name="city"  required>
-
-    
-        <button type="submit"> <a href="homePagePartner (1).html">Sign Up </a> </button>
-    </form> 
-<footer class="footer">
-            &copy; Olang, 2024
-        
-        </footer> 
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,9 +7,9 @@
     <title>Olang</title>
 </head>
 <body>
-    <!-- <div class="top-nav">
+    <div class="top-nav">
         <nav>
-            <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
+            <img class="olanglogo" src="olanglogo.png" />
             <h3 class="olang">Olang</h3>
             <div class="navbarCenter">
                 <h6 class="Home"><a href="home.html">Home</a></h6>
@@ -147,108 +17,129 @@
                 <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
             </div>
         </nav>
-    </div> -->
+    </div>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
-            <h3 class="olang">Olang</h3>
-        </div>
-        <div class="nav-links">
-            <h6 class="Home"><a href="home.html">Home</a></h6>
-            <h6 class="About"><a href="About.html">About</a></h6>
-            <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
-        </div>
-    </nav>
+    <form id="PSignupForm" >
+        <center><h2>Welcome Partner ! </h2></center>
+        <center><h3>Please fill the follow to sign up </h3></center>
+        <br>
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" name="firstName" required><br>
 
-    <form>
-        <center><h2>Welcome Partner !</h2></center>
-        <center><h3>Please fill the following to sign up</h3></center><br>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
-
-        <label for="age">Age:</label>
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+        <label for="age">Age *</label>
         <select name="age" id="age" required>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-            <option value="32">32</option>
-            <option value="33">33</option>
-            <option value="34">34</option>
-            <option value="35">35</option>
-            <option value="36">36</option>
-            <option value="37">37</option>
-            <option value="38">38</option>
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
-            <option value="46">46</option>
-            <option value="47">47</option>
-            <option value="48">48</option>
-            <option value="49">49</option>
-            <option value="50">50</option>
-            <option value="51">51</option>
-            <option value="52">52</option>
-            <option value="53">53</option>
-            <option value="54">54</option>
-            <option value="55">55</option>
-            <option value="56">56</option>
-            <option value="57">57</option>
-            <option value="58">58</option>
-            <option value="59">59</option>
-            <option value="60">60</option>        </select>
+            <option value="">Select Age</option>
+        </select>
+        <script>
+            var ageDropdown = document.getElementById("age");
+            function AgeDropdown() {
+                ageDropdown.innerHTML = "";
+                var defaultOption = document.createElement("option");
+                defaultOption.text = "Select Age";
+                defaultOption.value = "";
+                ageDropdown.add(defaultOption);
+                for (var i = 18; i <= 100; i++) {
+                    var option = document.createElement("option");
+                    option.text = i;
+                    option.value = i;
+                    ageDropdown.add(option);
+                }
+            }
+            AgeDropdown();
+        </script>
+        
+        <br>
+<br>
+<label for="gender">Gender *</label>
+<div id="gender">
+    <label for="male">Male:</label>
+    <input name="gender" id="male" type="radio" value="Male" required>
+    <label for="female">Female:</label>
+    <input name="gender" id="female" type="radio" value="Female" required>
+    <label for="ratherNot">Rather not to tell:</label>
+    <input name="gender" id="ratherNot" type="radio" value="Rather not to tell" checked required>
+</div>
 
-<!-- 
-            <label>Gender:</label><br>
-            <label><input name="gender" type="radio" value="male">Male:</label><br>
-            <label><input name="gender" type="radio" value="female">Female: </label><br>
-            <label><input name="gender" type="radio" value="rather-not-tell">Rather not to tell: </label><br>
- -->
 
-    <legend>Gender:</legend>
-    <label for="male"><input name="gender" type="radio" id="male" value="male">Male</label><br>
-    <label for="female"><input name="gender" type="radio" id="female" value="female">Female</label><br>
-    <label for="rather-not-tell"><input name="gender" type="radio" id="rather-not-tell" value="rather-not-tell">Rather not to tell</label><br>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="profilePhoto">Profile Photo</label>
+        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*"><br>
 
-        <label for="profilePhoto">Profile Photo (optional):</label>
-        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" required><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="phoneNumber">Phone Number *</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br>
 
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required>
+        <label for="bio">Short bio *<br>(languages spoken, cultural knowledge):<br></label>
+        <textarea name="bio" rows="4" cols="40" id="bio" required>Enter short bio</textarea><br>
 
-        <label for="bio">Short bio (languages spoken, cultural knowledge):</label>
-        <textarea name="bio" rows="4" cols="40" required>Enter short bio:</textarea>
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required><br>
 
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-
-        <button type="submit">Sign Up</button>
+        <button type="submit"> <a href="homePagePartner.html" id="submitbtn"disabled >Sign Up </a> </button>
     </form>
 
-    <footer class="footer">&copy; Olang, 2024</footer>
+    <footer class="footer">
+        &copy; Olang, 2024
+    </footer>
+
+    <script>
+        document.getElementById("PSignupForm").addEventListener("input", function () {
+            //assign values to be tested
+            var firstName = document.getElementById("firstName").value.trim();
+            var lastName = document.getElementById("lastName").value.trim();
+            var age = document.getElementById("age").value;
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var phoneNumber = document.getElementById("phoneNumber").value.trim();
+            var bio = document.getElementsByName("bio")[0].value.trim();
+            var city = document.getElementById("city").value.trim();
+            var profilePhoto = document.getElementById("profilePhoto").files[0];
+
+            // Email, Password & PhoneNumber formats
+            var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordFormat = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+            var phoneNumberFormat = /^\d{10}$/;
+            var imageValidity = true;
+        if (profilePhoto) {
+            var allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+            var imageExtension = profilePhoto.name.split(".").pop().toLowerCase();
+            imageValidity = allowedExtensions.includes(imageExtension);
+        }
+            // checking validity of each input field 
+            var validity = firstName !== "" && lastName !== "" && age !== "" && email !== "" && emailFormat.test(email) && password !== "" && passwordFormat.test(password) && phoneNumber !== "" && phoneNumberFormat.test(phoneNumber) && bio !== "" && city !== ""&& imageValidity;
+            document.getElementById("submitbtn").disabled = !validity;
+
+            // display an error message to tell the user to enter the correct format
+            if (email !== "" && !emailFormat.test(email)) {
+                document.getElementById("email").setCustomValidity("Email must be in correct format");
+            } else {
+                document.getElementById("email").setCustomValidity("");
+            }
+
+            if (password !== "" && !passwordFormat.test(password)) {
+                document.getElementById("password").setCustomValidity("Password must be at least 8 characters with at least one special character.");
+            } else {
+                document.getElementById("password").setCustomValidity("");
+            }
+
+            if (phoneNumber !== "" && !phoneNumberFormat.test(phoneNumber)) {
+                document.getElementById("phoneNumber").setCustomValidity("Phone number must be 10 digits.");
+            } else {
+                document.getElementById("phoneNumber").setCustomValidity("");
+            }
+            if (!imageValidity) {
+            document.getElementById("profilePhoto").setCustomValidity("image must be on of this (jpg, jpeg, png, gif).");
+        } else {
+            document.getElementById("profilePhoto").setCustomValidity("");
+        }
+        });
+    </script>
 </body>
 </html>
+
