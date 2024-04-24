@@ -3,262 +3,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
 
 
-.profile-picture {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-}
-body {
-    background-color: #f2f4f9;
-   
-    min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-       
-        
-        
-    
-    
-}
-footer {
-    
-    bottom: 0px;
-    width: 100%;
-    background-color: rgb(0, 0, 0); /* Example background color with transparency */
-    color: white; 
-    padding: 5px; 
-    margin-top: auto;
-    position: absolute;
-    top: 1280px;
-    text-align: center;
-    height: 3%;
-  }
 
-.circular-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 5px solid #080808;
-}
 
-.currentsessions{
-    position: absolute;
-    top: 250px;
-    left: 50px;
-    background: #dadce0;
-    width: 1260px;
-    height: 500px;
-    border-radius: 50px;
-    margin: auto;
-    
-    }
-h1{
-    position: absolute;
-    top:130px;
-    left:600px;
-    font-family: "Quicksand";
-    font-size: 50px;
-    font-weight: 600;
-    color:#212122;
-    z-index: 200;
-    
-}
-.previoussessions{
-    position: absolute;
-    top: 755px;
-    left: 50px;
-    background: #dadce0;
-    width: 1260px;
-    height: 500px;
-    border-radius: 50px;
-    margin: auto; 
-   
-}
-.profile-picture1{
-    position: absolute;
-    top: 100px;
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
-    margin-left: 15px;
-    z-index: 1;
-}
-.circular-image1{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 5px solid #080808;
-    z-index: 1;
-}
-.currentsessions h2{
-    position:absolute;
-    left: 40px;
-    margin-left: auto;
-    font-family: "Quicksand", Helvetica;
-    font-size: 25pt;
-}
-.currentsessions .circular-image1,.profile-picture1{
-    position:absolute;
-    left: 30px;
-    bottom: 10px;
-    margin-left: auto;
-    width: 65px;
-    height: 65px;
-   
-}
-.currentsessions .circular-image1{
-    border: 2px solid #080808; 
-}
-.date1{
-    position: absolute;
-    left: 150px;
-    top: -25px;
-    background: #f2f4f9;
-    padding: 20px;
-    border-radius: 30px;
-    height: 50px;
-    width: 1000px;
-    text-align: center;
-    font-size: 15pt;
-    font-family: "Prompt", Helvetica;
-}
-.currentsessions .viewpartner1{
-    position: absolute;
-    left: 1050px;
-    top: -10px;
-}
- 
-.date2{
-    position: absolute;
-    left: 180px;
-    top: 230px;
-    background: #f2f4f9;
-    padding: 20px;
-    border-radius: 30px;
-    height: 50px;
-    width: 850px;
-    text-align: center;
-    font-size: 15pt;
-    font-family: "Prompt", Helvetica;  
-}
-.currentsessions .viewpartner2{
-    position: absolute;
-    left: 1080px;
-    top: 250px;
-}
-.previoussessions h2{
-    position:absolute;
-    left: 40px;
-    margin-left: auto;
-    font-family: "Quicksand", Helvetica;
-    font-size: 25pt;
-}
-.date3{
-    position: absolute;
-    left: 190px;
-    top: 100px;
-    background: #f2f4f9;
-    padding: 20px;
-    border-radius: 30px;
-    height: 50px;
-    width: 1000px;
-    text-align: center;
-    font-size: 15pt;
-    font-family: "Prompt", Helvetica;  
-}
-.edit{
-    position: absolute;
-    top: 90px;
-    left: 1040px;
+h3{   
+    margin-left: 10px;
+    font-size: 26px;
+    color: #387454;
+  
   }
   
-  .profile-picture {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    position: absolute;
-    left: 1260px;
-    top: 58px;
-}
-
-.circular-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2.5px solid #ea6a40;
-    
-}
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    position: absolute;
-    left: 1250px;
-    top: 87px;
-}
-
-.circular-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2.5px solid #ea6a40;
-    
-}
-.circular-image2,.profile-picture2{
-    position: absolute;
-    top: -100px;
-    left: 0px;
-}
-.previoussessions .circular-image1,.profile-picture1{
-    position: absolute;
-    bottom: 5px;
-    left: 35px;
-}
-.previoussessions .circular-image1{
-    border: 2px solid #080808; 
-}
-.circular-image10 {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2.5px solid #ea6a40;
-    
-}
-.profile-picture10 {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    position: absolute;
-    left: 1200px;
-    top: 60px;
-}
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 35px;
-    background-color: white;
-    padding: 10px;
-    list-style: none;
+  
+  * {
     margin: 0;
-    width:150px;
-    height: 100px;
-    border-radius: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#d66f1b, #f2f4f9);
+    margin: 0; /* Ensure no default margin */
+    padding: 0; /* Ensure no default padding */
+  }
+  
+  /*body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Prompt";
+    background: linear-gradient(#d66f1b 0%, #F2F4F9 100%); 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  
+  }*/
+  /* 
+  main {
+    flex: 1;
+  } */
+  
+  
+  
+  /* 
+  header {
+    background-color: #f2f4f9;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height:120px;
+    width:100%;
+  } */
+  
+  main{
+    margin-top: auto;
+  }
+  
+  
+   h1 {
     text-align: center;
+    margin-top: auto;
+    font-size: 36px;
+    color: #f2f4f9;
   }
   
-  .profile-dropdown:hover .dropdown-menu {
-    display: block;
-    color: #00391b;
+  
+  .features {
+    display: flex;
+    justify-content: center; /* Align boxes in the center */
+    flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+    /* margin-top: 80px;
+    margin-bottom: 120px; */
   }
   
+  .features a {
+    color: #387454;
+    text-decoration: none;
+  }
+  
+  .feature {
+    text-align: center;
+    flex-basis: calc(20.33% - 20px);
+    background-color: #f2f4f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 50px;
+    margin-top: 140px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+  
+  .feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #387454;
+  }
+  
+  .feature p {
+    color: #387454;
+  }
+  
+    
+  h2 a:hover {
+    color: #6FBD57;
+  }
+  
+  
+    

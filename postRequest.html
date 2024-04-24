@@ -75,3 +75,42 @@
 
 
 </html>
+
+
+<script>
+  // Add your JavaScript code here
+  // You can use the document object to access elements on the page
+
+  // Example: Change the background color of the body element
+  document.body.style.backgroundColor = "lightblue";
+
+  // Example: Add an event listener to the form submit button
+  const form = document.querySelector("form");
+  const submitButton = document.querySelector("button[type='submit']");
+  submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get the selected language and proficiency level
+    const languageSelect = document.querySelector("select[name='Language']");
+    const proficiencySelect = document.querySelector("select[name='Proficiency']");
+    const language = languageSelect.value;
+    const proficiency = proficiencySelect.value;
+
+    // Validate the form inputs
+    if (language === "" || proficiency === "") {
+      alert("Please select a language and proficiency level");
+      return;
+    }
+
+    // Get the preferred schedule and session duration
+    const scheduleInput = document.querySelector("input[type='datetime-local']");
+    const durationSelect = document.querySelector("select[name='duration']");
+    const schedule = scheduleInput.value;
+    const duration = durationSelect.value;
+
+    // Perform any additional processing or validation here
+
+    // Submit the form data to the server
+    form.submit();
+  });
+</script>

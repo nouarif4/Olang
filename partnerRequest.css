@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
-
+/* 
 .olanglogo {
   position: absolute;
   width: 60px;
@@ -9,36 +9,37 @@
   top: 10px;
   left:10px;
   object-fit: cover;
-}
+} */
 
-
-body, h1, p, ul, li {
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
 
 h3{   
   margin-left: 10px;
   font-size: 26px;
-  
   color: #387454;
 
 }
 
-body {
-  font-family: 'Quicksand';
-  justify-content: center;
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
   justify-content: center;
-  height: 180vh;
-  background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
-  
+  align-items: center;
+  background: linear-gradient(#d66f1b, #f2f4f9);
+  margin: 0; /* Ensure no default margin */
+  padding: 0; /* Ensure no default padding */
 }
+
 /*body {
   display: flex;
   flex-direction: column;
@@ -51,57 +52,59 @@ body {
   padding: 0;
 
 }*/
-
+/* 
 main {
   flex: 1;
-}
+} */
 
 
 
-
+/* 
 header {
   background-color: #f2f4f9;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height:120px;
   width:100%;
+} */
+
+main{
+  margin-top: auto;
 }
-
-
 
 
  h1 {
   text-align: center;
-  margin-top: 35px;
+  margin-top: auto;
   font-size: 36px;
-  top: 100px;
-  color: #387454;
+  color: #f2f4f9;
 }
-
 
 
 .features {
   display: flex;
-  justify-content: space-around;
-  /*space-between;*/
-  margin-top: 80px;
-  margin-bottom: 120px;
-  
+  justify-content: center; /* Align boxes in the center */
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+  /* margin-top: 80px;
+  margin-bottom: 120px; */
 }
 
-.features a { 
+.features a {
   color: #387454;
   text-decoration: none;
-
 }
 
 .feature {
   text-align: center;
-  flex-basis: calc(20.33% - 20px); /*33.33*/
-  padding: 20px;
+  flex-basis: calc(20.33% - 20px);
   background-color: #f2f4f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  margin: 20px;
+  padding: 50px;
+  margin-top: 140px;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 
 .feature h2 {
@@ -114,195 +117,10 @@ header {
   color: #387454;
 }
 
-/* post request*/
-
-.form-container {
-    max-width: 400px;
-    margin: 45px;
-    margin-left: 5%;
-    padding: 20px;
-    background-color: #f2f4f9;
-    border-radius: 5px;
-    
-  }
-
-
-  h1{
-    color: #387454;;
-  }
-  label {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #387454;;
-  }
   
-
-  input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #387454;;
-  }
-
-
-  input[type="datetime-local"] {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #387454;;
-  }
-
-  
-  input[type="submit"] {
-    width: 100%;
-    margin-top: 20px;
-    background-color: #387454;
-    color: rgb(0, 0, 0);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #6FBD57;
-  }
-
-  footer{
-    margin-top: auto;
-    width: 100%;
-    height:50px;
-    text-align: center;
-    background:#212122;
-    color:#f2f4f9;
-  }
-
-
-
-.olanglogo {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50px;
-    left:80px;
-    object-fit: cover;
-  }
-  
-  
-  
-   .olang {
-    position: absolute;
-    width: 220px;
-    height: 90px;
-    top: 40px;
-    left: 140px;
-    font-family: "Prompt";
-    font-weight: 700;
-    color: #212122;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  
-  button{
-    height: 40px;
-    width: 150px;
-    margin: 4px;
-    cursor: pointer;
-    line-height: 1;
-    border-radius: 50px;
-    transition-property: background-color;
-    transition-duration: .3s;
-   border: 1px solid transparent;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
-    color: #000000;
-    background-color: #387454;
-    font-family: "Prompt";  
-    font-weight:600;
-  }
-  
-  
-  
-  button:hover{
-      color: #f2f4f9;
-      background-color: #6FBD57;
-      border:transparent
-  }
-  
-  
-  .edit{
-    position: absolute;
-    top: 90px;
-    left: 1040px;
-  }
-  
-
-
-
-
-
-
-
-  
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 35px;
-  background-color: white;
-  padding: 10px;
-  list-style: none;
-  margin: 0;
-  width:150px;
-  height: 100px;
-  border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.profile-dropdown:hover .dropdown-menu {
-  display: block;
-  color: #00391b;
-}
-.profile-picture10 {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  position: absolute;
-  left: 1200px;
-  top: 58px;
-}
-
-.circular-image10 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border: 2.5px solid #ea6a40;
-  
-}
-nav {
-  background-color: #f2f2f2;
-  width: 100%;
-  height: 15%;
-
+h2 a:hover {
+  color: #6FBD57;
 }
 
 
-
-
-
-
-
+  
