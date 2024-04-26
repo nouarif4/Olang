@@ -279,7 +279,7 @@ footer {
 
 
 .navbar .nav-links h6 {
-  margin: 0 10px  /* Adjusted margin for better spacing */
+  margin: 0 10px 10px; /* Adjusted margin for better spacing */
 }
 
 
@@ -318,3 +318,15 @@ footer {
   text-align: center;
 }
 
+
+h2{
+  text-align: center;
+  font-size: 30px;
+  color: #f2f4f9;
+  margin-top:50px;
+
+}
+
+.navbar .nav-links h6 {
+  margin: 0 10px 10px; /* Adjusted margin for better spacing */
+}

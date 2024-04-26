@@ -224,8 +224,7 @@ body {
   width: 700px;
   height: 500px;
 }
-
-/* Header styles */
+/* 
 header {
   position: absolute;
   top: 0;
@@ -233,28 +232,8 @@ header {
   background-color: #f2f4f9;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */ */
 
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 1%;
-  padding: 0;
-  color: #387454;
-}
-
-nav ul li {
-  margin-right: 60px;
-}
-
-nav ul li a:hover {
-  color: #6FBD57;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #387454;
-}
 
 .profile-dropdown .dropdown-menu {
   display: none;

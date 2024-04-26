@@ -219,6 +219,10 @@ footer {
 
 
 
+.navbar .nav-links h6 {
+  margin: 0 10px 10px; /* Adjusted margin for better spacing */
+}
+
 
 .olang {
   position: absolute;

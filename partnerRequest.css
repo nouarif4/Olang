@@ -27,6 +27,10 @@ h3{
 }
 
 
+.navbar .nav-links h6 {
+  margin: 0 10px 10px; /* Adjusted margin for better spacing */
+}
+
 
 body {
   font-family: 'Quicksand', sans-serif;

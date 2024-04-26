@@ -85,18 +85,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Section</title>
     <link rel="stylesheet" href="PartnersList.css">
+    <link rel="stylesheet" href="navbar.css" />
+
+    <script>
+        // Get all the team members
+        const teamMembers = document.querySelectorAll('.team-member');
+
+        // Calculate the average rating
+        let totalRating = 0;
+        teamMembers.forEach(member => {
+            const ratingElement = member.querySelector('p[id$="Rating"]');
+            const rating = parseInt(ratingElement.textContent);
+            totalRating += rating;
+        });
+        const averageRating = totalRating / teamMembers.length;
+
+        // Display the average rating
+        const averageRatingElement = document.createElement('p');
+        averageRatingElement.textContent = `Average Rating: ${averageRating}%`;
+        document.querySelector('.main-container').appendChild(averageRatingElement);
+    </script>
+
 </head>
+
+
+
 <body>
-    <header class="header">
-        <nav>
-            <ul>
-                <li><img class="olanglogo" src="OlangLogo.png" alt="Site Icon"></li>
-                <li><a href="homePageLearner.html">Home</a></li>
-                <li class="profile-dropdown"><a href="sessionLearner.html">Session</a></li>
-                <li class="profile-dropdown"><a href="learnerRequest.html">Request</a></li>
-                <li class="profile-dropdown"><a href="viewprofileLearner.html">Manage Profile</a></li>
-            </ul>
-        </nav>
+
+
+
+    
+    <nav class="navbar">
+      <div class="logo">
+          <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
+          <h3 class="olang">Olang</h3>
+      </div>
+      <div class="nav-links">
+          <h6 class="Home"><a href="homePagePartner (1).html">Home</a></h6>
+          <h6 class="About"><a href="partnerRequest.html">requests</a></h6>
+          <h6 class="FAQ"><a href="sessionPartner.html">Sessions</a></h6>
+          <h6 class="ViewProfile"><a href="viewprofilePartner.html">Profile</a></h6>
+          <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
+      </div>
+  </nav>
     </header>
 
     <main>  
@@ -152,24 +183,7 @@
                     <p>17$ per Hour </p>
                     <button href="postRequest.html" class="form .btn .inner">Request a Session</button>
                 </div>
-                <script>
-                    // Get all the team members
-                    const teamMembers = document.querySelectorAll('.team-member');
-
-                    // Calculate the average rating
-                    let totalRating = 0;
-                    teamMembers.forEach(member => {
-                        const ratingElement = member.querySelector('p[id$="Rating"]');
-                        const rating = parseInt(ratingElement.textContent);
-                        totalRating += rating;
-                    });
-                    const averageRating = totalRating / teamMembers.length;
-
-                    // Display the average rating
-                    const averageRatingElement = document.createElement('p');
-                    averageRatingElement.textContent = `Average Rating: ${averageRating}%`;
-                    document.querySelector('.main-container').appendChild(averageRatingElement);
-                </script>
+                
              </div>
             
         </div>
@@ -178,5 +192,8 @@
     <footer>
         <p>&copy; Olang, 2024 </p>
     </footer>
+
+
+    
 </body>
 </html>
