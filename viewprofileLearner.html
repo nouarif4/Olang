@@ -4,42 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>view profile</title>
-    <link rel="stylesheet" href="viewprofilelearner.css">
-    <link rel="stylesheet" href="navbar2.css">
+    <link rel="stylesheet" href="viewprofilepartner.css">
+    <link rel="stylesheet" href="navbar.css">
+    
+    
 </head>
 <body>
-    <nav class="navbar">
-      <div class="logo">
-          <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
-          <h3 class="olang">Olang</h3>
-      </div>
-      <div class="nav-links">
-          <h6 class="Home"><a href="homePageLearner.html">Home</a></h6>
-          <h6 class="About"><a href="learnerRequest.html">requests</a></h6>
-          <h6 class="FAQ"><a href="sessionLearner.html">Sessions</a></h6>
-          <h6 class="ViewProfile"><a href="viewprofileLearner.html">Profile</a></h6>
-          <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
-      </div>
-  </nav>
-  
+
+
+            <nav class="navbar">
+                <div class="logo">
+                    <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
+                    <h3 class="olang">Olang</h3>
+                </div>
+                <div class="nav-links">
+                    <h6 class="Home"><a href="homePageLearner.html">Home</a></h6>
+                    <h6 class="About"><a href="learnerRequest.html">requests</a></h6>
+                    <h6 class="FAQ"><a href="generalSessionPageLearner.html">Sessions</a></h6>
+                    <h6 class="ViewProfile"><a href="viewprofilePartner.html">Profile</a></h6>
+                    <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
+                </div>
+            </nav>
+
+
+
+
     <form>
-        <h1>Your account</h1>
-        <br>
+        <h1 class="yourAccount">Your account</h1>
+       
         <div class="profile-picture">
-            <div class="profile-" style="background-image: url('profile.png');"></div></div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-        
+            <img id="profile-image" src="profile.png">
+        </div>
+        <br>
         <div class="input-grid">
             <div>
-            
                 <input type="file" id="file-upload" name="profilePhoto" accept="image/*" class="file-upload-input">
-                <label for="file-upload" class="edit-btn">Edit Profile image
-            </label></div>
+                <label for="file-upload" class="edit-btn">Edit Profile image</label>
+            </div>
+        </div>
             <label for="input" style="margin-top: 50px;"> First name <br>
                 <input type="text" class="input-box" value="john"> </label>
             <br>
@@ -72,6 +74,18 @@
     &copy; Olang, 2024
 
 </footer> 
+<script>
+    document.getElementById('file-upload').addEventListener('change', function(event) {
+const file = event.target.files[0];
+if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('profile-image').src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+}
+});
 
+    </script>
 </body>
 </html>

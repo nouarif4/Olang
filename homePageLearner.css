@@ -90,7 +90,7 @@ transition: transform 0.3s ease;
 }
 .text{
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     font-family: "Quicksand", Helvetica;
     font-size: 25pt;
@@ -123,6 +123,7 @@ h2{
     top:270px;
     left:425px;
     font-size: 50px;
+    z-index: 1000;
 }
 
 
@@ -136,18 +137,14 @@ h2{
 }
 
 
-
-footer {
-    clear: both; /* Clear floats to ensure the footer stays below other elements */
-    position: relative; /* Set position to relative */
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background: #212122;
-    color: #f2f4f9;
-    padding-top: 15px;
-    margin-top: auto; /* Push footer to the end of the page */
-  }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+}
   
   
   
@@ -232,5 +229,9 @@ footer {
   
   .navbar .nav-links h6 {
     margin: 0 10px 10px; /* Adjusted margin for better spacing */
+  }
+  .speak-a-new-language{
+    color: #ea6a40;
+    text-align: center;
   }
   
