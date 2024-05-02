@@ -1,0 +1,108 @@
+.sessions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .sessions table {
+    border-collapse: collapse;
+  }
+
+  .sessions td {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+.data p{
+    font-family: 'Quicksand';
+    color: #ffffff;
+}
+  .data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    
+  }
+
+  .viewpartner6 {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #d66f1b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Quicksand'
+  }
+  .sessions table td {
+    border: 80px solid #ffffff;
+    background-color: #35353538; /* Add border to all table cells */
+    border-radius: 10px;
+  }
+  .sessions table caption {
+    font-size: 18px; /* Set the font size of the caption */
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+  }
+  h1{
+    font-family: 'Quicksand';
+    text-align: center;
+    position: relative;
+   
+  }
+  .partner-details {
+    display: none;
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  top: calc(100% + 10px); /* Position the box below the button */
+  left: 50%; /* Position the box horizontally centered relative to the button */
+  transform: translateX(-50%); /* Center the box horizontally */
+  background-color: #d66f1b;
+  border: 1px solid #d66f1b;
+  padding: 10px;
+  border-radius: 10px;
+
+  }
+  .viewpartner6:hover + .partner-details {
+    display: block; /* Show the box when hovering over the button */
+  }
+  h4{
+    color: #ccc;
+    font-size: larger;
+    font-family: 'Quicksand';
+  }
+  .sessions {
+    position: relative; /* Add relative positioning to the sessions container */
+  }
+  .star {
+    color: #747373; /* Default color for unshaded stars */
+    font-size: 24px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+.star.active {
+    color: #ffd700; /* Color for shaded stars */
+}
+  

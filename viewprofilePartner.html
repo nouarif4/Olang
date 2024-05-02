@@ -1,8 +1,4 @@
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +7,7 @@
     <title>view profile</title>
     <link rel="stylesheet" href="viewprofilepartner.css">
     <link rel="stylesheet" href="navbar.css">
+    
 </head>
 <body>
 
@@ -33,23 +30,18 @@
 
 
     <form>
-        <h1>Your account</h1>
+        <h1 class="yourAccount">Your account</h1>
+       
+        <div class="profile-picture">
+            <img id="profile-image" src="profile.png">
+        </div>
         <br>
-        <!-- <div class="profile-picture">
-            <div class="circular-image" style="background-image: url('profile.png');"></div></div> -->
-            <img class="profile-picture" src="profile.png">
-    <br>
-        
         <div class="input-grid">
             <div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
                 <input type="file" id="file-upload" name="profilePhoto" accept="image/*" class="file-upload-input">
-                <label for="file-upload" class="edit-btn">Edit Profile image
-            </label></div>
+                <label for="file-upload" class="edit-btn">Edit Profile image</label>
+            </div>
+        </div>
             <label for="input" style="margin-top: 50px;"> First name <br>
                 <input type="text" class="input-box" value="john"> </label>
             <br>
@@ -146,5 +138,18 @@
     &copy; Olang, 2024
 
 </footer>
+<script>
+    document.getElementById('file-upload').addEventListener('change', function(event) {
+const file = event.target.files[0];
+if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('profile-image').src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+}
+});
+
+    </script>
 </body>
 </html>

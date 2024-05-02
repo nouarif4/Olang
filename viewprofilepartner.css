@@ -2,18 +2,15 @@
 
 body {
     font-family: 'Quicksand';
-    margin: 0;
+   
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 230vh;
     background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
     flex-direction: column;
-    min-height: 100vh;
-    
    
-    
 }
+
 
 h1 {
     color: black;
@@ -37,7 +34,10 @@ form {
     
 }
 
-
+.yourAccount{
+    position: relative;
+    top: -5%;
+}
 form label {
     text-align: left;
     font-size: large;
@@ -84,14 +84,15 @@ button {
     font-size: 14px;
 }
 
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    position: absolute;
-    left: 250px;
-    top: 220px;
-    align-items: center;
+
+#profile-image{
+    position: relative;
+   top: 90%;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    border: 2px solid ; /* Border color */
+      border-radius: 50%;
 }
 
 /* .circular-image {
