@@ -24,7 +24,7 @@
         </div >
     
 
-<form>
+<form id="signupForm">
  
     <center><h2>Welcome Learner ! </h2></center>
     
@@ -58,5 +58,42 @@
             &copy; Olang, 2024
         
         </footer> 
+    <script>
+            document.getElementById("signupForm").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent form submission
+              var form = this;
+              
+              // Validate form fields
+              var firstName = form.elements["firstName"].value;
+              var lastName = form.elements["lastName"].value;
+              var email = form.elements["email"].value;
+              var password = form.elements["password"].value;
+              var city = form.elements["city"].value;
+              var location = form.elements["location"].value;
+            
+              // Perform basic validation
+              if(firstName.trim() === "" || lastName.trim() === "" || email.trim() === "" || password.trim() === "" || city.trim() === "" || location.trim() === "") {
+                alert("Please fill in all required fields");
+                return;
+              }
+            
+              // If all fields are filled, proceed with form submission via AJAX
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", "insert.php", true);
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function() {
+                if(xhr.readyState === XMLHttpRequest.DONE) {
+                  if(xhr.status === 200) {
+                    alert(xhr.responseText); // Show success message
+                    form.reset(); // Reset the form
+                  } else {
+                    alert("Error occurred while inserting data"); // Show error message
+                  }
+                }
+              };
+              var formData = new FormData(form);
+              xhr.send(formData);
+            });
+            </script>
 </body>
 </html>
