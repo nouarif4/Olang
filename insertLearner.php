@@ -6,11 +6,11 @@ if(isset($_POST['submit'])){
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // You can handle profile photo upload if needed
+  // not now
     $city = $_POST['city'];
     $location = $_POST['location'];
 
-    // Perform validation if needed
+
 
     // Insert data into the database
     $query = "INSERT INTO partners (first_name, last_name, email, password, city, location) VALUES ('$firstName', '$lastName', '$email', '$password', '$city', '$location')";
