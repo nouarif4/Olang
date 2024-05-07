@@ -3,9 +3,9 @@ session_start();
 
 // Database connection parameters
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$username = "root";
+$password = "";
+$database = "olang";
 
 // Connect to the database
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -16,9 +16,9 @@ if (!$conn) {
 }
 
 // Check if user is logged in
-if (!isset($_SESSION['learner_id'])) {
+if (!isset($_SESSION["ID"])) {
     // Redirect user to login page if not logged in
-    header("Location: login.html");
+    header("Location: signinLearner.php");
     exit();
 }
 
@@ -37,7 +37,6 @@ mysqli_close($conn);
     <meta charset="utf-8" />
     <title>Olang</title>
     
-    <link rel="stylesheet" href="navbar2.css" />
     <link rel="stylesheet" href="home view profile.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    
