@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
     $duration = $_POST['duration'];
     $language = $_POST['language'];
 
-    $query = "INSERT INTO request (status, level, dateTime, duration, language) VALUES ('$status', '$proficiency', '$$schedule', '$duration', '$language')";
+    $query = "INSERT INTO request (status, level, dateTime, duration, language) VALUES ('$Pending', '$proficiency', '$$schedule', '$duration', '$language')";
     $result = mysqli_query($con, $query);
 
     if($result){

@@ -16,7 +16,7 @@ if(isset($_POST['edit'])){
     $duration = $_POST['duration'];
     $language = $_POST['language'];
 
-    $query = "UPDATE request SET (status, level, dateTime, duration, language) VALUES ('$status', '$proficiency', '$$schedule', '$duration', '$language')";
+    $query = "UPDATE request SET (status, level, dateTime, duration, language) VALUES ('Pending', '$proficiency', '$$schedule', '$duration', '$language')";
     $result = mysqli_query($con, $query);
 
     if($result){
