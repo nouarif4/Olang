@@ -158,6 +158,3 @@ $conn->close();
 </body>
 </html>
 
-
-=======
->>>>>>> Stashed changes
