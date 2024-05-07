@@ -22,4 +22,3 @@ if(isset($_POST['submit'])){
         echo "Error: " . $query . "<br>" . mysqli_error($con);
     }
 }
-?>

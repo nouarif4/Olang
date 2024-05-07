@@ -1,3 +1,40 @@
+<!-- GenralSignUp.html --><!DOCTYPE html>
+<html>
+<body>
+    <!-- Your existing HTML code -->
+    <h6 class="Home"><a href="home.html">Home</a></h6>
+    <h6 class="About"><a href="About.html">About</a></h6>
+    <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
+
+    <!-- PHP code -->
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "olang";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+    ?>
+
+    <!-- More of your existing HTML code -->
+    <img class="skipping-girl-image" src="skipping-girl-image.png" />
+    <h3>Welcome Among Us!</h3>
+    <form>
+        <button class="button2"> <a href="signUpLearner.html">Sign up as Learner </a></button>
+        <button class="button1"> <a href="signUpPartner.html" >Sign up as Partner </a></button>
+    </form>
+    <footer class="footer">
+        &copy; Olang, 2024
+    </footer>  
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
