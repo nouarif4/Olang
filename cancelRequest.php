@@ -2,7 +2,14 @@
 session_start();
 include('config.php');
 
-$connection = mysqli_connect(host, username, password, olang);
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$database = "olang"; 
+
+
+$conn = new mysqli($servername, $username, $password, $database);
+
 
 if (!$connection) {
     die("Database connection failed: " . mysqli_connect_error());
@@ -21,4 +28,3 @@ if(isset($_POST['cancel'])){
         echo "Error: " . $query . "<br>" . mysqli_error($con);
     }
 }
-?>

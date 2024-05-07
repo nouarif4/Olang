@@ -2,7 +2,13 @@
 session_start();
 include('config.php');
 
-$connection = mysqli_connect(host, username, password, olang);
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$database = "olang"; 
+
+
+$conn = new mysqli($servername, $username, $password, $database);
 
 
 if (!$connection) {
