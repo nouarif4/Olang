@@ -1,6 +1,7 @@
 <!-- currentRequest.html -->
 <?php
 session_start();
+include('config.php');
 
 // Database connection parameters
 $servername = "localhost";
@@ -9,10 +10,10 @@ $password = "";
 $database = "olang";
 
 // Connect to the database
-$conn = mysqli_connect($servername, $username, $password, $database);
+$con = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
-if (!$conn) {
+if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 

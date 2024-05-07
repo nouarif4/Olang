@@ -7,9 +7,9 @@ $username = "root";
 $password = "";
 $database = "olang";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$con = new mysqli($servername, $username, $password, $database);
 
-if (!$conn) {
+if (!$con) {
     die("Database connection failed: " . mysqli_connect_error());
 }
 
