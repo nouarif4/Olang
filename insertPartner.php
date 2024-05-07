@@ -1,7 +1,7 @@
 <?php
 // Database connection
 $servername = "localhost";
-$username = "";
+$username = "root";
 $password = "";
 $dbname = "olang";
 
