@@ -3,9 +3,9 @@ session_start();
 
 // Database connection parameters
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$username = "root";
+$password = "";
+$database = "olang";
 
 // Connect to the database
 $conn = mysqli_connect($servername, $username, $password);
@@ -33,7 +33,7 @@ function getUserData($email) {
 // Function to update user data
 function updateUserData($email, $data) {
     global $conn;
-    $query = "UPDATE learner SET first_name = '{$data['first_name']}', last_name = '{$data['last_name']}', city = '{$data['city']}', location = '{$data['location']}' WHERE email = '$email'";
+    $query = "UPDATE learner SET firstName = '{$data['first_name']}', lastName = '{$data['last_name']}', city = '{$data['city']}', location = '{$data['location']}' WHERE email = '$email'";
     $result = mysqli_query($conn,$query);
     if (!$result) {
         die("Update failed: " . mysqli_connect_error());
