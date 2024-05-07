@@ -3,9 +3,9 @@ session_start();
 
 // Database connection parameters
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$username = "root";
+$password = "";
+$database = "olang";
 
 // Connect to the database
 $conn = mysqli_connect($servername, $username, $password);

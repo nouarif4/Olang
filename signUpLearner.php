@@ -1,10 +1,13 @@
 <!-- signUpLearner.php -->
-<?php
-$host = "your_host";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
-
+<!-- <?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "olang";
+$connection = mysqli_connect($host, $username, $password, $database);
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 // Function to handle form submission and database insert
 function handleFormSubmission($connection)
 {
@@ -104,4 +107,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         &copy; Olang, 2024
     </footer>
 </body>
-</html>
+</html> -->
