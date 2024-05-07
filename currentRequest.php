@@ -18,19 +18,18 @@ if (!$conn) {
 
 // Check if user is logged in
 if (!isset($_SESSION["ID"])) {
-    // Redirect user to login page if not logged in
     header("Location: signinLearner.php");
     exit();
 }
 
 // Fetch current requests of the learner
-$learner_id = $_SESSION['learner_id'];
-$sql = "SELECT * FROM requests WHERE learner_id = $learner_id";
+$learner_id = $_SESSION['learnerID'];
+$sql = "SELECT * FROM request WHERE learnerID = $learnerID";
 $result = mysqli_query($conn, $sql);
 
-// Close database connection
 mysqli_close($conn);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +38,7 @@ mysqli_close($conn);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Current Requests</title>
   <link rel="stylesheet" href="request.css">
-  <!-- Add your CSS styles here -->
+
 </head>
 
 <body>
@@ -65,11 +64,11 @@ nav class="navbar">
         <li class="-item">
           <div class="-header"></div>
           <p class="-content">
-            <?php echo "Request: " . $row['request_id']; ?><br>
+            <?php echo "Request: " . $row['requestID']; ?><br>
             <?php echo "Language: " . $row['language']; ?><br>
-            <?php echo "Proficiency Level: " . $row['proficiency_level']; ?><br>
-            <?php echo "Preferred Schedule: " . $row['preferred_schedule']; ?><br>
-            <?php echo "Session duration: " . $row['session_duration']; ?>
+            <?php echo "Proficiency Level: " . $row['level']; ?><br>
+            <?php echo "Preferred Schedule: " . $row['dateTime']; ?><br>
+            <?php echo "Session duration: " . $row['duration']; ?>
           </p>
           <br>
           <br>
@@ -99,8 +98,6 @@ nav class="navbar">
 
 
 
-
-
 <!-- currentRequest.html
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +108,7 @@ nav class="navbar">
   <link rel="stylesheet" href="request.css">
   <!-- <link rel="stylesheet" href="styleLearner.css"> -->
     <!-- <link href="navbar.css" rel="stylesheet"> -->
-</head>
+    </head>
 <!--
 <body>
   <nav class="navbar">
@@ -179,4 +176,8 @@ nav class="navbar">
 
 </footer>
 </body>
-</html>  -->
+</html>  --> 
+
+
+
+
