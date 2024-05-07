@@ -29,40 +29,46 @@
 
 
 
-    <form>
+    <form action="viewProfileLearner.php" method="post" enctype="multipart/form-data">
         <h1 class="yourAccount">Your account</h1>
        
         <div class="profile-picture">
-            <img id="profile-image" src="profile.png">
+            <img id="profile-image" src="data:image/jpeg;base64,<?php echo base64_encode($userData['image']); ?>">
         </div>
         <br>
         <div class="input-grid">
             <div>
+                
                 <input type="file" id="file-upload" name="profilePhoto" accept="image/*" class="file-upload-input">
+                <input type="hidden" name="editProfileImage" value="1">
                 <label for="file-upload" class="edit-btn">Edit Profile image</label>
             </div>
         </div>
             <label for="input" style="margin-top: 50px;"> First name <br>
-                <input type="text" class="input-box" value="john"> </label>
-            <br>
+                <input type="text" class="input-box" value="<?php echo $userData['first_name']; ?>"> </label>
+                <span class="error-message"><?php echo isset($errorMsgs['first_name']) ? $errorMsgs['first_name'] : ''; ?></span>
+
+                <br>
             
             <label> Last name <br>
-                <input type="text" class="input-box" value="doe"> </label>
-            <br>
+                <input type="text" class="input-box" value=<?php echo $userData['last_name']; ?>"> </label>
+                <span class="error-message"><?php echo isset($errorMsgs['last_name']) ? $errorMsgs['last_name'] : ''; ?></span>
+                <br>
             <label> Email <br>
-                <input type="email" class="input-box" value="john@gmail.com"> </label>
-            <br>
+                <input type="email" class="input-box" value=<?php echo $userData['email']; ?>">> </label>
+                <span class="error-message"><?php echo isset($errorMsgs['password']) ? $errorMsgs['password'] : ''; ?></span>
+                <br>
             <label> Password <br>
-                <input type="password" class="input-box" value="********"> </label>
+                <input type="password" class="input-box" value=<?php echo $userData['password']; ?>"> </label>
             <br>
             <label> city <br>
-                <input type="text" class="input-box" value="riyadh"> </label>
+                <input type="text" class="input-box" value="<?php echo $userData['city']; ?>"> </label>
             <br>
             <label> Location <br>
-                <input type="text" class="input-box" value="king khalid road"> </label>
+                <input type="text" class="input-box" value="<?php echo $userData['location']; ?>"> </label>
             <br>
-            <button type="submit">edit</button>
-            <button type="delete" class="delete">delete account</button>
+            <button type="submit" name="edit">edit</button>
+            <button type="submit" class="delete" name="delete">delete account</button>
         </div>
        
     </form>

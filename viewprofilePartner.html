@@ -4,152 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>view profile</title>
+    <title>View Profile</title>
     <link rel="stylesheet" href="viewprofilepartner.css">
     <link rel="stylesheet" href="navbar.css">
-    
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
+            <h3 class="olang">Olang</h3>
+        </div>
+        <div class="nav-links">
+            <h6 class="Home"><a href="homePagePartner (1).html">Home</a></h6>
+            <h6 class="About"><a href="partnerRequest.html">Requests</a></h6>
+            <h6 class="FAQ"><a href="sessionPartner.html">Sessions</a></h6>
+            <h6 class="ViewProfile"><a href="viewprofilePartner.html">Profile</a></h6>
+            <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
+        </div>
+    </nav>
 
-
-            <nav class="navbar">
-                <div class="logo">
-                    <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
-                    <h3 class="olang">Olang</h3>
-                </div>
-                <div class="nav-links">
-                    <h6 class="Home"><a href="homePagePartner (1).html">Home</a></h6>
-                    <h6 class="About"><a href="partnerRequest.html">requests</a></h6>
-                    <h6 class="FAQ"><a href="sessionPartner.html">Sessions</a></h6>
-                    <h6 class="ViewProfile"><a href="viewprofilePartner.html">Profile</a></h6>
-                    <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
-                </div>
-            </nav>
-
-
-
-
-    <form>
+    <form action="partner_profile_handler.php" method="POST" enctype="multipart/form-data">
         <h1 class="yourAccount">Your account</h1>
-       
         <div class="profile-picture">
-            <img id="profile-image" src="profile.png">
+            <img id="profile-image" src="data:image/jpeg;base64,<?php echo base64_encode($userData['image']); ?>">
         </div>
         <br>
         <div class="input-grid">
             <div>
                 <input type="file" id="file-upload" name="profilePhoto" accept="image/*" class="file-upload-input">
-                <label for="file-upload" class="edit-btn">Edit Profile image</label>
+                <input type="hidden" name="editProfileImage" value="1">
+                <label for="file-upload" class="edit-btn">Edit Profile Image</label>
             </div>
         </div>
-            <label for="input" style="margin-top: 50px;"> First name <br>
-                <input type="text" class="input-box" value="john"> </label>
-            <br>
-            
-            <label> Last name <br>
-                <input type="text" class="input-box" value="doe"> </label>
-            <br>
-            <label> Email <br>
-                <input type="email" class="input-box" value="john@gmail.com"> </label>
-            <br>
-            <label> Password <br>
-                <input type="password" class="input-box" value="********"> </label>
-            <br>
-            <label> city <br>
-                <input type="text" class="input-box" value="riyadh"> </label>
-            <br>
-            <label for="age">Age </label>
-
-<select name="age" id="age"  >
-  <option value="18">18</option>
-  <option value="19">19</option>
-  <option value="20">20</option>
-  <option value="21">21</option>
-  <option value="22">22</option>
-  <option value="23">23</option>
-  <option value="24">24</option>
-  <option value="25">25</option>
-  <option value="26">26</option>
-  <option value="27">27</option>
-  <option value="28">28</option>
-  <option value="29">29</option>
-  <option value="30">30</option>
-  <option value="31">31</option>
-  <option value="32">32</option>
-  <option value="33">33</option>
-  <option value="34">34</option>
-  <option value="35">35</option>
-  <option value="36">36</option>
-  <option value="37">37</option>
-  <option value="38">38</option>
-  <option value="39">39</option>
-  <option value="40">40</option>
-  <option value="41">41</option>
-  <option value="42">42</option>
-  <option value="43">43</option>
-  <option value="44">44</option>
-  <option value="45">45</option>
-  <option value="46">46</option>
-  <option value="47">47</option>
-  <option value="48">48</option>
-  <option value="49">49</option>
-  <option value="50">50</option>
-  <option value="51">51</option>
-  <option value="52">52</option>
-  <option value="53">53</option>
-  <option value="54">54</option>
-  <option value="55">55</option>
-  <option value="56">56</option>
-  <option value="57">57</option>
-  <option value="58">58</option>
-  <option value="59">59</option>
-  <option value="60">60</option>
-</select>
-            <br>
-            <label>Gender </label> 
-            <div class="gender">
-            
-
-  <label >male
-<input name="gender"type="radio" value="male"  checked></label>
-   <label >Female
-                <input name="gender"type="radio" value="Female"  ></label>
-
-                <label >not to tell
-                    <input name="gender"type="radio" value="not to tell"  ></label>
-                </div>
-         
-  <br>
-  <label> Phone number <br>
-    <input type="number" class="input-box" value="0559990550"> </label>
-    <br>
-    <label for="bio">Short bio <br>
-        </label>
-        <textarea name = "bio"
-        rows = "4" cols="40" required> hello i am a partner!</textarea>
+        <label for="first_name" style="margin-top: 50px;"> First name <br>
+            <input type="text" id="first_name" name="first_name" class="input-box" value="<?php echo $userData['first_name']; ?>"> </label>
         <br>
-            <button type="submit">edit</button>
-            <button type="delete " class="delete">delete account</button>
+        <label for="last_name"> Last name <br>
+            <input type="text" id="last_name" name="last_name" class="input-box" value="<?php echo $userData['last_name']; ?>"> </label>
+        <br>
+        <label for="email"> Email <br>
+            <input type="email" id="email" name="email" class="input-box" value="<?php echo $userData['email']; ?>"> </label>
+        <br>
+        <label for="password"> Password <br>
+            <input type="password" id="password" name="password" class="input-box" value="<?php echo $userData['password']; ?>"> </label>
+        <br>
+        <label for="city"> City <br>
+            <input type="text" id="city" name="city" class="input-box" value="<?php echo $userData['city']; ?>"> </label>
+        <br>
+        <label for="age"> Age </label>
+        <select name="age" id="age">
+            <?php for ($i = 18; $i <= 60; $i++): ?>
+                <option value="<?php echo $i; ?>" <?php if ($i == $userData['age']) echo 'selected'; ?>><?php echo $i; ?></option>
+            <?php endfor; ?>
+        </select>
+        <br>
+        <label> Gender </label> 
+        <div class="gender">
+            <label for="male">
+                <input name="gender" type="radio" id="male" value="male" <?php if ($userData['gender'] == 'male') echo 'checked'; ?>> Male
+            </label>
+            <label for="female">
+                <input name="gender" type="radio" id="female" value="female" <?php if ($userData['gender'] == 'female') echo 'checked'; ?>> Female
+            </label>
+            <label for="not_to_tell">
+                <input name="gender" type="radio" id="not_to_tell" value="not_to_tell" <?php if ($userData['gender'] == 'not_to_tell') echo 'checked'; ?>> Not to tell
+            </label>
         </div>
-    </form>
-   </div>
-</div> 
+        <br>
+        <label for="phone_number"> Phone number <br>
+            <input type="text" id="phone_number" name="phone_number" class="input-box" value="<?php echo $userData['phone_number']; ?>"> </label>
+        <br>
+        <label for="bio"> Short bio <br>
+            <textarea id="bio" name="bio" rows="4" cols="40" required><?php echo $userData['bio']; ?></textarea>
+        </label>
+        <br>
+        <button type="submit" name="edit" >Edit</button>
+        <button type="submit" name="delete" class="delete">Delete Account</button>
+    </div>
+</form>
+
 <footer class="footer">
     &copy; Olang, 2024
-
 </footer>
-<script>
-    document.getElementById('file-upload').addEventListener('change', function(event) {
-const file = event.target.files[0];
-if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        document.getElementById('profile-image').src = e.target.result;
-    }
-    reader.readAsDataURL(file);
-}
-});
 
-    </script>
+<script>
+document.getElementById('file-upload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-image').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+</script>
 </body>
 </html>
