@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phoneNumber = $_POST["phoneNumber"];
     $bio = $_POST["bio"];
     $city = $_POST["city"];
+}
+else {
+    echo "connection error";
+}
 
     // Sanitize the profile photo name
     $profilePhoto = $conn->real_escape_string($profilePhoto);
