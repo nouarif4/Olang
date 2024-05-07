@@ -1,38 +1,35 @@
 <?php
-// Database connection
+// Connecting to the database
 $servername = "localhost";
-<<<<<<< Updated upstream
 $username = "root";
-=======
-$username = "";
->>>>>>> Stashed changes
 $password = "";
 $dbname = "olang";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-//  connection
+// Connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Insert  data 
+// Insert data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $age = $_POST["age"];
     $gender = $_POST["gender"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $profilePhoto = $_FILES["profilePhoto"]["name"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $phoneNumber = $_POST["phoneNumber"];
     $bio = $_POST["bio"];
     $city = $_POST["city"];
 
+    // Sanitize the profile photo name
+    $profilePhoto = $conn->real_escape_string($profilePhoto);
 
-    $sql = "
-    INSERT INTO `partner`(`firstName`, `lastName`, `email`, `password`, `photo`, `city`, `age`, `gender`, `bio`, `phone`)
-     VALUES
-     ('$firstName', '$lastName', '$email', '$password', '$photo', '$city', '$age', '$gender', '$bio', '$phoneNumber')";
+    $sql = "INSERT INTO partners (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
+    VALUES ('$firstName', '$lastName', '$email','$password','$profilePhoto','$city',' $age','$gender',' $bio','$phoneNumber');";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -43,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,10 +135,8 @@ $conn->close();
             event.preventDefault(); // Prevent default form submission
             
             var form = this;
-            
-            // Other form validation and processing logic...
-            
-            // Perform AJAX submission
+        
+            // AJAX 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", form.getAttribute("action"), true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -164,6 +158,3 @@ $conn->close();
 </body>
 </html>
 
-
-=======
->>>>>>> Stashed changes
