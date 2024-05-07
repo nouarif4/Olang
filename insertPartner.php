@@ -1,4 +1,4 @@
-<<?php
+<?php
 // Connecting to the database
 $servername = "localhost";
 $username = "root";
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize the profile photo name
     $profilePhoto = $conn->real_escape_string($profilePhoto);
 
-    $sql = "INSERT INTO partners (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
+    $sql = "INSERT INTO partner (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
     VALUES ('$firstName', '$lastName', '$email','$password','$profilePhoto','$city',' $age','$gender',' $bio','$phoneNumber');";
 
     if ($conn->query($sql) === TRUE) {
@@ -62,7 +62,7 @@ $conn->close();
         </nav>
     </div>
 
-    <form id="PSignupForm" action="insertPartner.php" method="post">
+    <form id="PSignupForm" action="<?php echo $_SERVER['PHP_SELF']?>.php" method="POST">
         <center><h2>Welcome Partner ! </h2></center>
         <center><h3>Please fill the follow to sign up </h3></center>
         <br>
@@ -158,7 +158,4 @@ $conn->close();
     
 </body>
 </html>
-
-
-
 
