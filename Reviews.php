@@ -1,9 +1,9 @@
 
 <?php
-$host = "your_host";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "olang";
 
 // Create a database connection
 $connection = mysqli_connect($host, $username, $password, $database);
@@ -45,7 +45,7 @@ if (!$result) {
           <h6 class="About"><a href="partnerRequest.html">Requests</a></h6>
           <h6 class="FAQ"><a href="sessionPartner.html">Sessions</a></h6>
           <h6 class="ViewProfile"><a href="viewprofilePartner.html">Profile</a></h6>
-          <h6 class="LogOut"><a href="home.html">Log Out</a></h6>
+          <h6 class="LogOut"><a href="Signout.php">Log Out</a></h6>
       </div>
     </nav>
   </header>
