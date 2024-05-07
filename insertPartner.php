@@ -1,62 +1,58 @@
 <?php
-// Connecting to the database
+// Database connection settings
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "olang";
 
-// Create a new connection
+// Create a new database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Check the connection
 if ($conn->connect_error) {
-    die("Connection failed: ". $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Insert data
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize input data
-    $firstName = validateInput($_POST["firstName"]);
-    $lastName = validateInput($_POST["lastName"]);
-    $age = validateInput($_POST["age"]);
-    $gender = validateInput($_POST["gender"]);
-    $email = validateInput($_POST["email"]);
-    $profilePhoto = uploadProfilePhoto($_FILES["profilePhoto"]);
+    // Get the form data
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
+    $age = $_POST["age"];
+    $gender = $_POST["gender"];
+    $email = $_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $phoneNumber = validateInput($_POST["phoneNumber"]);
-    $bio = validateInput($_POST["bio"]);
-    $city = validateInput($_POST["city"]);
+    $profilePhoto = $_FILES["profilePhoto"]["name"];
+    $phoneNumber = $_POST["phoneNumber"];
+    $bio = $_POST["bio"];
+    $city = $_POST["city"];
 
-    // Prepare and execute the query
-    $sql = "INSERT INTO partner (firstName, lastName, email, password, photo, city, age, gender, bio, phone) 
-            VALUES (?,?,?,?,?,?,?,?,?,?)";
+    // Prepare the SQL query
+    $sql = "INSERT INTO `partner`(`firstName`, `lastName`, `email`, `password`, `photo`, `city`, `age`, `gender`, `bio`, `phone`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+
+    // Prepare the statement
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssssssss", $firstName, $lastName, $email, $password, $profilePhoto, $city, $age, $gender, $bio, $phoneNumber);
-    $stmt->execute();
 
-    if ($stmt->affected_rows > 0) {
-        echo "New record created successfully";
+    // Check if the statement was prepared successfully
+    if ($stmt) {
+        // Bind the parameters
+        $stmt->bind_param("ssssssissss", $firstName, $lastName, $email, $password, $profilePhoto, $city, $age, $gender, $bio, $phoneNumber);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            echo "New partner record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        // Close the statement
+        $stmt->close();
     } else {
-        echo "Error: ". $stmt->error;
+        echo "Error preparing the statement: " . $conn->error;
     }
-}
 
-$conn->close();
-
-// Helper functions
-function validateInput($input) {
-    return trim(htmlspecialchars(stripslashes($input)));
-}
-
-function uploadProfilePhoto($file) {
-    $targetDir = "uploads/";
-    $fileName = basename($file["name"]);
-    $targetFile = $targetDir. $fileName;
-    if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-        return $fileName;
-    } else {
-        return "";
-    }
+    // Close the connection
+    $conn->close();
 }
 ?>
 <!DOCTYPE html>
