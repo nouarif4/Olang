@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['email'] = $email;
 
-        header("Location: homePageLearner.html");
+        header("Location: homePagePartner(1).html");
         exit();
     } else {
      
