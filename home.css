@@ -217,9 +217,11 @@
   button:hover {
     background-color: #6FBD57;
   }
-  
-button a:visited, button a:visited{
-  text-decoration:none;
+
+
+
+
+a {
+  text-decoration: none; 
+  color: inherit; 
 }
-
-

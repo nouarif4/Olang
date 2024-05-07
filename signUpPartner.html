@@ -3,26 +3,31 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styleSign.css">
+    <link rel="stylesheet" href="navbar.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olang</title>
 </head>
 <body>
-    <div class="top-nav">
-        <nav>
-            <img class="olanglogo" src="olanglogo.png" />
+
+
+    <nav class="navbar">
+        <div class="logo">
+            <img class="olanglogo" src="olanglogo.png" alt="Olang Logo">
             <h3 class="olang">Olang</h3>
-            <div class="navbarCenter">
-                <h6 class="Home"><a href="home.html">Home</a></h6>
-                <h6 class="About"><a href="About.html">About</a></h6>
-                <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
-            </div>
-        </nav>
-    </div>
+        </div>
+        <div class="nav-links">
+            <h6 class="Home"><a href="home.html">Home</a></h6>
+            <h6 class="About"><a href="About.html">About</a></h6>
+            <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
+        </div>
+    </nav>
+
+
 
     <form id="PSignupForm" action="insertPartner.php" method="post">
-        <center><h2>Welcome Partner ! </h2></center>
-        <center><h3>Please fill the follow to sign up </h3></center>
+        <center><h2>Welcome Partner! </h2></center>
+        <center><h3>Please fill the following to sign up </h3></center>
         <br>
         <label for="firstName">First Name *</label>
         <input type="text" id="firstName" name="firstName" required><br>
