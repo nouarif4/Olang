@@ -8,35 +8,35 @@ $password = "your_password";
 $database = "your_database";
 
 // Connect to the database
-$conn = mysql_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password);
 if (!$conn) {
-    die("Database connection failed: " . mysql_error());
+    die("Database connection failed: " . mysqli_connect_error());
 }
 
 // Select the database
-$db_selected = mysql_select_db($database, $conn);
+$db_selected = mysqli_select_db($conn, $database);
 if (!$db_selected) {
-    die("Database selection failed: " . mysql_error());
+    die("Database selection failed: " . mysqli_connect_error());
 }
 
 // Function to fetch partner data based on email
 function getPartnerData($email) {
     global $conn;
     $query = "SELECT * FROM partner WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn,$query);
     if (!$result) {
-        die("Query failed: " . mysql_error());
+        die("Query failed: " .mysqli_connect_error());
     }
-    return mysql_fetch_assoc($result);
+    return mysqli_fetch_assoc($result);
 }
 
 // Function to update partner data
 function updatePartnerData($email, $data) {
     global $conn;
     $query = "UPDATE partner SET first_name = '{$data['first_name']}', last_name = '{$data['last_name']}', city = '{$data['city']}', location = '{$data['location']}', age = '{$data['age']}', gender = '{$data['gender']}', phone_number = '{$data['phone_number']}', bio = '{$data['bio']}' WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn,$query);
     if (!$result) {
-        die("Update failed: " . mysql_error());
+        die("Update failed: " . mysqli_connect_error());
     }
 }
 
@@ -44,9 +44,9 @@ function updatePartnerData($email, $data) {
 function deletePartnerAccount($email) {
     global $conn;
     $query = "DELETE FROM partner WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn,$query);
     if (!$result) {
-        die("Deletion failed: " . mysql_error());
+        die("Deletion failed: " . mysqli_connect_error());
     }
 }
 
@@ -66,9 +66,9 @@ if (isset($_FILES['profilePhoto']) && $_FILES['profilePhoto']['error'] === UPLOA
     $base64ImageData = base64_encode($imageData);
     // Update the partner's profile picture in the database
     $updateQuery = "UPDATE partner SET image = '{$base64ImageData}' WHERE email = '{$_SESSION['email']}'";
-    $updateResult = mysql_query($updateQuery, $conn);
+    $updateResult = mysqli_query($conn, $updateQuery);
     if (!$updateResult) {
-        die("Failed to update profile picture: " . mysql_error());
+        die("Failed to update profile picture: " . mysqli_connect_error());
     }
     // Reload partner data after updating the profile picture
     $partnerData = getPartnerData($_SESSION['email']);
@@ -114,8 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Close database connection
-mysql_close($conn);
+
 
 // Function to validate form data
 function validateFormData($formData) {
@@ -147,4 +146,6 @@ function validateFormData($formData) {
 
     return $errorMsg;
 }
+// Close database connection
+mysqli_close($conn);
 ?>

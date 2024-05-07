@@ -1,62 +1,43 @@
-<?php
+<<?php
 // Connecting to the database
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "olang";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Insert data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $age = $_POST["age"];
     $gender = $_POST["gender"];
     $email = $_POST["email"];
+    $profilePhoto = $_FILES["profilePhoto"]["name"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $phoneNumber = $_POST["phoneNumber"];
     $bio = $_POST["bio"];
     $city = $_POST["city"];
 
-    // Handle profile photo upload
-    $targetDir = "uploads/";
-    $profilePhoto = $_FILES["profilePhoto"]["name"];
-    $targetFilePath = $targetDir . basename($profilePhoto);
-    $fileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
+    // Sanitize the profile photo name
+    $profilePhoto = $conn->real_escape_string($profilePhoto);
 
-    // Check if image file is a actual image or fake image
-    $check = getimagesize($_FILES["profilePhoto"]["tmp_name"]);
-    if($check !== false) {
-        // Allow certain file formats
-        if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif") {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        } else {
-            // Attempt to move uploaded file
-            if (move_uploaded_file($_FILES["profilePhoto"]["tmp_name"], $targetFilePath)) {
-                // Insert data into database
-                $sql = "INSERT INTO partners (firstName, lastName, email, password, photo, city, age, gender, bio, phone)
-                        VALUES ('$firstName', '$lastName', '$email', '$password', '$targetFilePath', '$city', '$age', '$gender', '$bio', '$phoneNumber')";
-                if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-            }
-        }
+    $sql = "INSERT INTO partners (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
+    VALUES ('$firstName', '$lastName', '$email','$password','$profilePhoto','$city',' $age','$gender',' $bio','$phoneNumber');";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
     } else {
-        echo "File is not an image.";
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 
-// Close connection
 $conn->close();
 ?>
 
@@ -177,5 +158,7 @@ $conn->close();
     
 </body>
 </html>
+
+
 
 
