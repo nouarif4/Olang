@@ -6,7 +6,7 @@ $password = "";
 $dbname = "olang";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
+echo "connection error";
 // Connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -27,10 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sanitize the profile photo name
     $profilePhoto = $conn->real_escape_string($profilePhoto);
+    echo "assign data error";
 
     $sql = "INSERT INTO partner (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
     VALUES ('$firstName', '$lastName', '$email','$password','$profilePhoto','$city',' $age','$gender',' $bio','$phoneNumber');";
-
+echo "insert query error";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
