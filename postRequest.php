@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
       </select>
 
       <label>Preferred Schedule:</label>
-      <input type="datetime-local" name="Preferred Schedule">
+      <input type="datetime-local" name="dateTime">
 
 
         <label>Session duration:</label>

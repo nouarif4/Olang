@@ -12,6 +12,7 @@ if(isset($_POST['cancel'])){
     $requestID = $_POST['requestID'];
 
     $query = "UPDATE request SET Status = 'Cancelled' WHERE Requestid = '$requestID'";
+    //  $query = "DELETE FROM request WHERE Requestid = '$requestID'";
     $result = mysqli_query($con, $query);
 
     if($result){

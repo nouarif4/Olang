@@ -1,7 +1,11 @@
 <?php
 // Database connection
 $servername = "localhost";
+<<<<<<< Updated upstream
 $username = "root";
+=======
+$username = "";
+>>>>>>> Stashed changes
 $password = "";
 $dbname = "olang";
 
@@ -39,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,3 +165,5 @@ $conn->close();
 </html>
 
 
+=======
+>>>>>>> Stashed changes
