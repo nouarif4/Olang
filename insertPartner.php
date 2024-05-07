@@ -24,10 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bio = $_POST["bio"];
     $city = $_POST["city"];
 
-    
 
-    $sql = "INSERT INTO partners (first_name, last_name, age, gender, email, password, phone_number, bio, city)
-    VALUES ('$firstName', '$lastName', '$age', '$gender', '$email', '$password', '$phoneNumber', '$bio', '$city')";
+    $sql = "
+    INSERT INTO `partner`(`firstName`, `lastName`, `email`, `password`, `photo`, `city`, `age`, `gender`, `bio`, `phone`)
+     VALUES
+     ('$firstName', '$lastName', '$email', '$password', '$photo', '$city', '$age', '$gender', '$bio', '$phoneNumber')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";

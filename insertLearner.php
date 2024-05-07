@@ -13,7 +13,8 @@ if(isset($_POST['submit'])){
 
 
     // Insert data into the database
-    $query = "INSERT INTO partners (first_name, last_name, email, password, city, location) VALUES ('$firstName', '$lastName', '$email', '$password', '$city', '$location')";
+    $query = "INSERT INTO `learner`(`firstName`, `lastName`, `email`, `password`, `photo`, `city`, `location`) VALUES
+    ('$firstName', '$lastName', '$email', '$password', '$photo', '$city', '$location')";
     $result = mysqli_query($con, $query);
 
     if($result){
