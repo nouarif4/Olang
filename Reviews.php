@@ -1,5 +1,27 @@
-<!-- Reviews.html -->
 
+<?php
+$host = "your_host";
+$username = "your_username";
+$password = "your_password";
+$database = "your_database";
+
+// Create a database connection
+$connection = mysqli_connect($host, $username, $password, $database);
+
+// Check if the connection was successful
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+
+// Query to retrieve reviews from the database
+$query = "SELECT * FROM reviews";
+$result = mysqli_query($connection, $query);
+
+
+if (!$result) {
+    die("Database query failed: " . mysqli_error($connection));
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -129,7 +151,24 @@
          </div>
      </div>
 
-
+     <?php
+      // Loop through the retrieved reviews and populate the containers
+      while ($row = mysqli_fetch_assoc($result)) {
+          $comment = $row['comment'];
+          $rating = $row['rating'];
+          $partnerId = $row['partner_id'];
+          $learnerId = $row['learner_id'];
+      ?>
+      <div class="small-container">
+        <div class="team-member">
+     
+          <h5><?php echo $partnerId; ?>, <?php echo $rating; ?> &#128525</h5>
+          <p><?php echo $comment; ?></p>
+        </div>
+      </div>
+      <?php
+      }
+      ?>
 
     </div>
   </div>
