@@ -155,82 +155,43 @@
 
 </footer> 
 <script>
-  let currentRating = 0;
-  let textareaValue = ''; // Variable to store textarea value
-  let starValues = []; // Array to store star values
+    let currentRating = 0;
+    let textareaValue = ''; // Variable to store textarea value
 
-  function highlightStar(starIndex) {
-      for (let i = 1; i <= starIndex; i++) {
-          document.querySelector(`.star:nth-child(${i})`).classList.add('active');
-      }
-  }
+    function highlightStar(starIndex) {
+        for (let i = 1; i <= starIndex; i++) {
+            document.querySelector(`.star:nth-child(${i})`).classList.add('active');
+        }
+    }
 
-  function resetStars() {
-      for (let i = 1; i <= 5; i++) {
-          if (i > currentRating) {
-              document.querySelector(`.star:nth-child(${i})`).classList.remove('active');
-          }
-      }
-  }
+    function resetStars() {
+        for (let i = 1; i <= 5; i++) {
+            if (i > currentRating) {
+                document.querySelector(`.star:nth-child(${i})`).classList.remove('active');
+            }
+        }
+    }
 
-  function toggleStar(starIndex) {
-      if (starIndex === currentRating) {
-          currentRating = 0;
-      } else {
-          currentRating = starIndex;
-      }
-      resetStars();
-  }
+    function toggleStar(starIndex) {
+        if (starIndex === currentRating) {
+            currentRating = 0;
+        } else {
+            currentRating = starIndex;
+        }
+        resetStars();
+    }
 
-  function handleSubmit(button) {
-    const textArea = button.parentElement.querySelector('textarea');
-    const stars = button.parentElement.querySelectorAll('.star');
+    function handleSubmit(button) {
+        const textArea = button.parentElement.querySelector('textarea');
+        const stars = button.parentElement.querySelectorAll('.star');
+        const dataDiv = button.parentElement.parentElement;
 
-    // Store textarea value
-    textareaValue = textArea.value;
+        // Store textarea value
+        textareaValue = textArea.value;
 
-    // Disable text area
-    textArea.disabled = true;
-
-    // Disable stars in the same row
-    stars.forEach(star => {
-        star.removeEventListener('mouseover', highlightStar);
-        star.removeEventListener('mouseout', resetStars);
-        star.removeEventListener('click', toggleStar);
-        star.style.cursor = 'default'; // Change cursor to default
-    });
-
-    // Disable the submit button
-    button.disabled = true;
-}
-
-  function restoreValues() {//use it when you do the ajax
-      const textArea = document.querySelector('textarea');
-      const stars = document.querySelectorAll('.star');
-
-      // Restore textarea value
-      textArea.value = textareaValue;
-
-      // Restore star values
-      stars.forEach((star, index) => {
-          if (starValues[index]) {
-              star.classList.add('active');
-          } else {
-              star.classList.remove('active');
-          }
-      });
-
-      // Enable text area
-      textArea.disabled = false;
-
-      // Enable star rating elements
-      stars.forEach(star => {
-          star.addEventListener('mouseover', highlightStar);
-          star.addEventListener('mouseout', resetStars);
-          star.addEventListener('click', toggleStar);
-          star.style.cursor = 'pointer'; // Change cursor to pointer
-      });
-  }
+        // Hide the data div
+        dataDiv.style.display = 'none';
+    }
 </script>
 
   </body>
