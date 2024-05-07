@@ -1,65 +1,60 @@
 <?php
-// Connecting to the database
+// Database connection settings
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "olang";
 
-// Create connection
+// Create a new database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $age = $_POST["age"];
     $gender = $_POST["gender"];
     $email = $_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $profilePhoto = $_FILES["profilePhoto"]["name"];
     $phoneNumber = $_POST["phoneNumber"];
     $bio = $_POST["bio"];
     $city = $_POST["city"];
 
-    // Handle profile photo upload
-    $targetDir = "uploads/";
-    $profilePhoto = $_FILES["profilePhoto"]["name"];
-    $targetFilePath = $targetDir . basename($profilePhoto);
-    $fileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
+    // Prepare the SQL query
+    $sql = "INSERT INTO `partner`(`firstName`, `lastName`, `email`, `password`, `photo`, `city`, `age`, `gender`, `bio`, `phone`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
-    // Check if image file is a actual image or fake image
-    $check = getimagesize($_FILES["profilePhoto"]["tmp_name"]);
-    if($check !== false) {
-        // Allow certain file formats
-        if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif") {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+
+    // Check if the statement was prepared successfully
+    if ($stmt) {
+        // Bind the parameters
+        $stmt->bind_param("ssssssissss", $firstName, $lastName, $email, $password, $profilePhoto, $city, $age, $gender, $bio, $phoneNumber);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            echo "New partner record created successfully";
         } else {
-            // Attempt to move uploaded file
-            if (move_uploaded_file($_FILES["profilePhoto"]["tmp_name"], $targetFilePath)) {
-                // Insert data into database
-                $sql = "INSERT INTO partners (firstName, lastName, email, password, photo, city, age, gender, bio, phone)
-                        VALUES ('$firstName', '$lastName', '$email', '$password', '$targetFilePath', '$city', '$age', '$gender', '$bio', '$phoneNumber')";
-                if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-            }
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
+
+        // Close the statement
+        $stmt->close();
     } else {
-        echo "File is not an image.";
+        echo "Error preparing the statement: " . $conn->error;
     }
+
+    // Close the connection
+    $conn->close();
 }
-
-// Close connection
-$conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +76,7 @@ $conn->close();
         </nav>
     </div>
 
-    <form id="PSignupForm" action="insertPartner.php" method="post">
+    <form id="PSignupForm" action="insertPartner.php" method="POST">
         <center><h2>Welcome Partner ! </h2></center>
         <center><h3>Please fill the follow to sign up </h3></center>
         <br>
@@ -150,30 +145,32 @@ $conn->close();
         &copy; Olang, 2024
     </footer>
 
-    <script>
-        document.getElementById("PSignupForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            var form = this;
+   
+
+<script>
+    document.getElementById("PSignupForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
         
-            // AJAX 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", form.getAttribute("action"), true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if(xhr.readyState === XMLHttpRequest.DONE) {
-                    if(xhr.status === 200) {
-                        alert(xhr.responseText); // Show success message
-                        form.reset(); // Reset the form
-                    } else {
-                        alert("Error occurred while inserting data"); // Show error message
-                    }
+        var form = this;
+        
+        // AJAX 
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "<?php echo $_SERVER['PHP_SELF'];?>", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                if(xhr.status === 200) {
+                    alert(xhr.responseText); // Show success message
+                    form.reset(); // Reset the form
+                } else {
+                    alert("Error: " + xhr.statusText); // Show error message
                 }
-            };
-            var formData = new FormData(form);
-            xhr.send(formData);
-        });
-    </script>
+            }
+        };
+        var formData = new FormData(form);
+        xhr.send(formData);
+    });
+</script>
     
 </body>
 </html>
