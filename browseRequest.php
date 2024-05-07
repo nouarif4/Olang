@@ -53,7 +53,7 @@ mysqli_close($conn);
           <br>
           <li><a href="viewprofileLearner.html">EDIT PROFILE</a></li>
           <br>
-          <li><a href="#">SIGN OUT</a></li>
+          <li><a href="Signout.php">SIGN OUT</a></li>
         </ul></li>
     </div>
   </nav>

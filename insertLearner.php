@@ -26,17 +26,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $targetDir = "uploads/"; // Directory where uploaded files will be stored
     $profilePhoto = basename($_FILES["profilePhoto"]["name"]); // Name of the uploaded file
 
-    
-    if (move_uploaded_file($_FILES["profilePhoto"]["tmp_name"], $targetDir . $profilePhoto)) {
-        echo "The file ". $profilePhoto. " has been uploaded.";
+    if(isset($_FILES["profilePhoto"]) && $_FILES["profilePhoto"]["error"] == 0) {
+        $targetDir = "uploads/"; // Directory where uploaded files will be stored
+        $profilePhoto = basename($_FILES["profilePhoto"]["name"]); // Name of the uploaded file
+
+        if (move_uploaded_file($_FILES["profilePhoto"]["tmp_name"], $targetDir . $profilePhoto)) {
+            echo "The file ". $profilePhoto. " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        // No file uploaded, set default value for profilePhoto
+        $profilePhoto = ""; // Or you can set it to a default image path
     }
 
-   
-    $sql = "INSERT INTO learner (firstName, lastName, email, password,photo, city, location, ) 
-            VALUES ('$firstName', '$lastName', '$email', '$password','$profilePhoto' ,'$city', '$location', '$profilePhoto')";
+    // if (move_uploaded_file($_FILES["profilePhoto"]["tmp_name"], $targetDir . $profilePhoto)) {
+    //     echo "The file ". $profilePhoto. " has been uploaded.";
+    // } else {
+    //     echo "Sorry, there was an error uploading your file.";
+    // }
 
+   
+    $sql = "INSERT INTO learner (firstName, lastName, email, password, photo, city, location) 
+            VALUES ('$firstName', '$lastName', '$email', '$password', '$profilePhoto', '$city', '$location')";
+
+    
     // Execute SQL statement
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -101,14 +115,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required>
 
-    <button type="submit" ><a  href="homePageLearner.html">Sign Up </a> </button> 
+    <button type="submit" name="submit">Sign Up </button> 
 
 </form>
 <footer class="footer">
             &copy; Olang, 2024
         
         </footer> 
-        <script>
+        <!-- <script>
     document.getElementById("PSignupForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent default form submission
         
@@ -133,8 +147,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         var formData = new FormData(form);
         xhr.send(formData);
     });
-</script>
-
+</script> -->
+<!-- 
     <script>
             document.getElementById("signupForm").addEventListener("submit", function(event) {
               event.preventDefault(); // Prevent form submission
@@ -171,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               var formData = new FormData(form);
               xhr.send(formData);
             });
-            </script>
+            </script> -->
 </body>
 </html>
 
