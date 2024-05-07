@@ -5,43 +5,60 @@ $username = "root";
 $password = "";
 $dbname = "olang";
 
+// Create a new connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-echo "connection error";
-// Connection
+
+// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: ". $conn->connect_error);
 }
 
 // Insert data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstName = $_POST["firstName"];
-    $lastName = $_POST["lastName"];
-    $age = $_POST["age"];
-    $gender = $_POST["gender"];
-    $email = $_POST["email"];
-    $profilePhoto = $_FILES["profilePhoto"]["name"];
+    // Validate and sanitize input data
+    $firstName = validateInput($_POST["firstName"]);
+    $lastName = validateInput($_POST["lastName"]);
+    $age = validateInput($_POST["age"]);
+    $gender = validateInput($_POST["gender"]);
+    $email = validateInput($_POST["email"]);
+    $profilePhoto = uploadProfilePhoto($_FILES["profilePhoto"]);
     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $phoneNumber = $_POST["phoneNumber"];
-    $bio = $_POST["bio"];
-    $city = $_POST["city"];
+    $phoneNumber = validateInput($_POST["phoneNumber"]);
+    $bio = validateInput($_POST["bio"]);
+    $city = validateInput($_POST["city"]);
 
-    // Sanitize the profile photo name
-    $profilePhoto = $conn->real_escape_string($profilePhoto);
-    echo "assign data error";
+    // Prepare and execute the query
+    $sql = "INSERT INTO partner (firstName, lastName, email, password, photo, city, age, gender, bio, phone) 
+            VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssssssss", $firstName, $lastName, $email, $password, $profilePhoto, $city, $age, $gender, $bio, $phoneNumber);
+    $stmt->execute();
 
-    $sql = "INSERT INTO partner (firstName, lastName, email , password,photo, city , age , gender ,bio , phone )
-    VALUES ('$firstName', '$lastName', '$email','$password','$profilePhoto','$city',' $age','$gender',' $bio','$phoneNumber');";
-echo "insert query error";
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->affected_rows > 0) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: ". $stmt->error;
     }
 }
 
 $conn->close();
-?>
 
+// Helper functions
+function validateInput($input) {
+    return trim(htmlspecialchars(stripslashes($input)));
+}
+
+function uploadProfilePhoto($file) {
+    $targetDir = "uploads/";
+    $fileName = basename($file["name"]);
+    $targetFile = $targetDir. $fileName;
+    if (move_uploaded_file($file["tmp_name"], $targetFile)) {
+        return $fileName;
+    } else {
+        return "";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +80,7 @@ $conn->close();
         </nav>
     </div>
 
-    <form id="PSignupForm" action="<?php echo $_SERVER['PHP_SELF']?>.php" method="POST">
+    <form id="PSignupForm" action="insertPartner.php" method="POST">
         <center><h2>Welcome Partner ! </h2></center>
         <center><h3>Please fill the follow to sign up </h3></center>
         <br>
@@ -132,31 +149,34 @@ $conn->close();
         &copy; Olang, 2024
     </footer>
 
-    <script>
-        document.getElementById("PSignupForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            var form = this;
+   
+
+<script>
+    document.getElementById("PSignupForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
         
-            // AJAX 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", form.getAttribute("action"), true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if(xhr.readyState === XMLHttpRequest.DONE) {
-                    if(xhr.status === 200) {
-                        alert(xhr.responseText); // Show success message
-                        form.reset(); // Reset the form
-                    } else {
-                        alert("Error occurred while inserting data"); // Show error message
-                    }
+        var form = this;
+        
+        // AJAX 
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "<?php echo $_SERVER['PHP_SELF'];?>", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                if(xhr.status === 200) {
+                    alert(xhr.responseText); // Show success message
+                    form.reset(); // Reset the form
+                } else {
+                    alert("Error: " + xhr.statusText); // Show error message
                 }
-            };
-            var formData = new FormData(form);
-            xhr.send(formData);
-        });
-    </script>
+            }
+        };
+        var formData = new FormData(form);
+        xhr.send(formData);
+    });
+</script>
     
 </body>
 </html>
+
 
