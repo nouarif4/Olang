@@ -3,40 +3,40 @@ session_start();
 
 // Database connection parameters
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$username = "root";
+$dbpassword = "";
+$database = "olang";
 
 // Connect to the database
-$conn = mysql_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $dbpassword);
 if (!$conn) {
-    die("Database connection failed: " . mysql_error());
+    die("Database connection failed: " . mysqli_connect_error());
 }
 
 // Select the database
-$db_selected = mysql_select_db($database, $conn);
+$db_selected = mysqli_select_db($conn, $database);
 if (!$db_selected) {
-    die("Database selection failed: " . mysql_error());
+    die("Database selection failed: " . mysqli_error($conn));
 }
 
 // Function to fetch user data based on email
 function getUserData($email) {
     global $conn;
     $query = "SELECT * FROM learner WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn, $query);
     if (!$result) {
-        die("Query failed: " . mysql_error());
+        die("Query failed: " . mysqli_error($conn));
     }
-    return mysql_fetch_assoc($result);
+    return mysqli_fetch_assoc($result);
 }
 
 // Function to update user data
 function updateUserData($email, $data) {
     global $conn;
     $query = "UPDATE learner SET first_name = '{$data['first_name']}', last_name = '{$data['last_name']}', city = '{$data['city']}', location = '{$data['location']}' WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn, $query);
     if (!$result) {
-        die("Update failed: " . mysql_error());
+        die("Update failed: " . mysqli_error($conn));
     }
 }
 
@@ -44,9 +44,9 @@ function updateUserData($email, $data) {
 function deleteUserAccount($email) {
     global $conn;
     $query = "DELETE FROM learner WHERE email = '$email'";
-    $result = mysql_query($query,$conn);
+    $result = mysqli_query($conn, $query);
     if (!$result) {
-        die("Deletion failed: " . mysql_error());
+        die("Deletion failed: " . mysqli_error($conn));
     }
 }
 
@@ -67,9 +67,9 @@ if (isset($_POST['editProfileImage'])) {
         $base64ImageData = base64_encode($imageData);
         // Update the user's profile picture in the database
         $updateQuery = "UPDATE learner SET image = '{$base64ImageData}' WHERE email = '{$_SESSION['email']}'";
-        $updateResult = mysql_query($updateQuery, $conn);
+        $updateResult = mysqli_query($conn, $updateQuery);
         if (!$updateResult) {
-            die("Failed to update profile picture: " . mysql_error());
+            die("Failed to update profile picture: " . mysqli_error($conn));
         }
         // Reload user data after updating the profile picture
         $userData = getUserData($_SESSION['email']);
@@ -132,5 +132,5 @@ function validateFormData($formData) {
 }
 
 // Close database connection
-mysql_close($conn);
+mysqli_close($conn);
 ?>
