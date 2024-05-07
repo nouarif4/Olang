@@ -1,32 +1,35 @@
-
-<!-- signInLearner.html -->
-
+<!-- signInPartner.html -->
 <?php
 session_start();
 
-$connection = mysqli_connect("host", "username", "password", "olang");
+
+$connection = mysqli_connect(host, username, password, database);
+
 
 if (!$connection) {
     die("Database connection failed: " . mysqli_connect_error());
 }
 
-// Insert a single record into the database (if needed)
-$query = "INSERT INTO learner (email, password) VALUES ('lamaalangari@gmail.com', 'password123')";
-mysqli_query($connection, $query);
+$message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Search the database to validate login credentials
+    $email = mysqli_real_escape_string($connection, $email);
+    $password = mysqli_real_escape_string($connection, $password);
+
     $query = "SELECT * FROM learner WHERE email = '$email' AND password = '$password'";
     $result = mysqli_query($connection, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['email'] = $email;
-        header("Location: homePageLearner.html");
+
+        header("Location: homePagePartner(1).html");
         exit();
     } else {
+     
         $message = "Email or password is incorrect.";
     }
 }
@@ -41,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styleSign.css">
 </head>
 <body>
+    <embed   height=fixed>
     <div class="top-nav">
         <nav>
             <img class="olanglogo" src="olanglogo.png" />
@@ -53,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </nav>
     </div>
 
-    <form method="POST" action="signinLearner.php">
-        <center><h2>Welcome Learner!</h2></center>
+    <form method="POST" action="">
+        <center><h2>Welcome Partner!</h2></center>
         <center><h3>Please fill in the following to sign in</h3></center>
         <br>
         <label for="email">Email:</label>
@@ -64,11 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" id="password" name="password" required>
 
         <button type="submit">Sign In</button>
-    </form>
 
-    <?php if (isset($message)) { ?>
-        <p><?php echo $message; ?></p>
-    <?php } ?>
+        <?php if (!empty($message)) { ?>
+            <p><?php echo $message; ?></p>
+        <?php } ?>
+    </form>
 
     <footer class="footer">
         &copy; Olang, 2024

@@ -1,35 +1,30 @@
-<!-- signInPartner.html -->
 <?php
 session_start();
 
-
-$connection = mysqli_connect(host, username, password, database);
+$connection = mysqli_connect(host, username, password, olang);
 
 
 if (!$connection) {
     die("Database connection failed: " . mysqli_connect_error());
 }
 
-$message = '';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+   
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $email = mysqli_real_escape_string($connection, $email);
-    $password = mysqli_real_escape_string($connection, $password);
-
+   
     $query = "SELECT * FROM learner WHERE email = '$email' AND password = '$password'";
     $result = mysqli_query($connection, $query);
 
     if (mysqli_num_rows($result) > 0) {
+        
         $_SESSION['email'] = $email;
 
         header("Location: homePageLearner.html");
         exit();
     } else {
-     
+       
         $message = "Email or password is incorrect.";
     }
 }
@@ -44,21 +39,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styleSign.css">
 </head>
 <body>
-    <embed   height=fixed>
     <div class="top-nav">
-        <nav>
+    <nav>
             <img class="olanglogo" src="olanglogo.png" />
             <h3 class="olang">Olang</h3>
             <div class="navbarCenter">
-                <h6 class="Home"><a href="home.html">Home</a></h6>
-                <h6 class="About"><a href="About.html">About</a></h6>
-                <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
+             <h6 class="Home"><a href="home.html">Home</a></h6>
+             <h6 class="About"><a href="About.html">About</a></h6>
+             <h6 class="FAQ"><a href="FAQ.html">FAQ</a></h6>
             </div>
-        </nav>
+            
+          </nav>
     </div>
 
     <form method="POST" action="">
-        <center><h2>Welcome Partner!</h2></center>
+        <center><h2>Welcome Learner!</h2></center>
         <center><h3>Please fill in the following to sign in</h3></center>
         <br>
         <label for="email">Email:</label>
@@ -68,11 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" id="password" name="password" required>
 
         <button type="submit">Sign In</button>
-
-        <?php if (!empty($message)) { ?>
-            <p><?php echo $message; ?></p>
-        <?php } ?>
     </form>
+
+    <?php if (isset($message)) { ?>
+        <p><?php echo $message; ?></p>
+    <?php } ?>
 
     <footer class="footer">
         &copy; Olang, 2024
