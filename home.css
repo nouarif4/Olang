@@ -5,11 +5,27 @@
 
 
 
-body{
-  background-color: #f2f4f9;
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
 }
 
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f2f4f9;
+    margin: 0; /* Ensure no default margin */
+    padding: 0; /* Ensure no default padding */
+  }
 
  
   .saly {
@@ -207,18 +223,3 @@ button a:visited, button a:visited{
 }
 
 
-
-
-
-
-footer {
-  clear: both; /* Clear floats to ensure the footer stays below other elements */
-  position: relative; /* Set position to relative */
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  background: #212122;
-  color: #f2f4f9;
-  padding-top: 15px;
-  margin-top: auto; /* Push footer to the end of the page */
-}

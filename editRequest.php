@@ -25,4 +25,3 @@ if(isset($_POST['edit'])){
         echo "Error: " . $query . "<br>" . mysqli_error($con);
     }
 }
-?>
