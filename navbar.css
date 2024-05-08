@@ -6,8 +6,6 @@
 
 
 
-
-
 footer {
   clear: both; /* Clear floats to ensure the footer stays below other elements */
   position: relative; /* Set position to relative */
