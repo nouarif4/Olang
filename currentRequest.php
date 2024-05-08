@@ -3,32 +3,28 @@
 session_start();
 include('config.php');
 
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$con = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 // Check if user is logged in
-if (!isset($_SESSION["ID"])) {
-    header("Location: signinLearner.php");
-    exit();
+if (!isset($_SESSION["learnerID"])) {
+  header("Location: signinLearner.php");
+  exit();
 }
 
 // Fetch current requests of the learner
 $learner_id = $_SESSION['learnerID'];
-$sql = "SELECT * FROM request WHERE learnerID = $learnerID";
-$result = mysqli_query($conn, $sql);
+try {
+  // Prepare the SQL query
+  $stmt = $pdo->prepare("SELECT * FROM your_table_name WHERE learner_id = :learner_id");
 
-mysqli_close($conn);
+  // Bind parameters
+  $stmt->bindParam(':learner_id', $learner_id, PDO::PARAM_INT);
+
+  // Execute the query
+  $stmt->execute();
+
+} catch(PDOException $e) {
+  // Handle errors
+  echo "Error: " . $e->getMessage();
+}
 ?>
 
 
@@ -62,16 +58,15 @@ nav class="navbar">
     <h2>Current Requests</h2>
     <div class="container">
       <ul id="request-list">
-        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+      <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
         <li class="-item">
-          <div class="-header"></div>
-          <p class="-content">
-            <?php echo "Request: " . $row['requestID']; ?><br>
-            <?php echo "Language: " . $row['language']; ?><br>
-            <?php echo "Proficiency Level: " . $row['level']; ?><br>
-            <?php echo "Preferred Schedule: " . $row['dateTime']; ?><br>
-            <?php echo "Session duration: " . $row['duration']; ?>
-          </p>
+           <p>
+                    Request: <?php echo $row['requestID']; ?><br>
+                    Language: <?php echo $row['language']; ?><br>
+                    Proficiency Level: <?php echo $row['level']; ?><br>
+                    Preferred Schedule: <?php echo $row['dateTime']; ?><br>
+                    Session duration: <?php echo $row['duration']; ?>
+           </p>
           <br>
           <br>
           <br>
