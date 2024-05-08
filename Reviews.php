@@ -1,18 +1,12 @@
 
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Create a database connection
-$connection = mysqli_connect($host, $username, $password, $database);
-
-// Check if the connection was successful
-if (!$connection) {
-    die("Database connection failed: " . mysqli_connect_error());
+session_start();
+include('config.php');
+if (!isset($_SESSION['partner_id'])) {
+    // Redirect to login page or handle unauthorized access
+    header("Location: signinPartner.php");
+    exit();
 }
-
 // Query to retrieve reviews from the database
 $query = "SELECT * FROM reviews";
 $result = mysqli_query($connection, $query);

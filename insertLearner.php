@@ -1,18 +1,12 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $servername = "localhost"; 
-    $username = "root"; 
-    $password = ""; 
-    $database = "olang"; 
+session_start();
+include('config.php');
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
+}
 
-    
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     
     $firstName = $_POST['firstName'];
@@ -60,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Close database connection
     $conn->close();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

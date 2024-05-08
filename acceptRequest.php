@@ -1,7 +1,11 @@
 <?php
 session_start();
 include('config.php');
-
+if (!isset($_SESSION['partner_id'])) {
+    // Redirect to login page or handle unauthorized access
+    header("Location: signinPartner.php");
+    exit();
+}
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 

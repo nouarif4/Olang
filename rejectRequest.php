@@ -1,19 +1,12 @@
 <?php
 session_start();
 include('config.php');
-
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$database = "olang"; 
-
-
-$con = new mysqli($servername, $username, $password, $database);
-
-
-if (!$con) {
-    die("Database connection failed: " . mysqli_connect_error());
+if (!isset($_SESSION['partner_id'])) {
+    // Redirect to login page or handle unauthorized access
+    header("Location: signinPartner.php");
+    exit();
 }
+
 
 if(isset($_POST['reject'])){
     $requestID = $_POST['requestID'];

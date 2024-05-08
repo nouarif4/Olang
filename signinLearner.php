@@ -1,12 +1,15 @@
 <?php
 session_start();
+include('config.php'); // Import PHP file (Config.php)
 
-$connection = mysqli_connect(host, username, password, olang);
-
-
-if (!$connection) {
-    die("Database connection failed: " . mysqli_connect_error());
+// Check if user is logged in
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
 }
+
+//
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    

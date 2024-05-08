@@ -1,9 +1,10 @@
 <?php
-include 'config.php';
+
 
 
 // Check if learner is logged in and retrieve learnerID
 session_start();
+include ('config.php');
 if (!isset($_SESSION['learner_id'])) {
     // Redirect to login page or handle unauthorized access
     header("Location: signinLearner.php");

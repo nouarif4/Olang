@@ -1,13 +1,12 @@
 <!-- signInPartner.html -->
 <?php
 session_start();
-
-
-$connection = mysqli_connect(host, username, password, database);
-
-
-if (!$connection) {
-    die("Database connection failed: " . mysqli_connect_error());
+include('config.php');
+// Check if partner is logged in
+if (!isset($_SESSION['partner_id'])) {
+    // Redirect to login page or handle unauthorized access
+    header("Location: signinPartner.php");
+    exit();
 }
 
 $message = '';

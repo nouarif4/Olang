@@ -1,7 +1,11 @@
 <?php
 session_start();
 include('config.php');
-
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
+}
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 

@@ -1,5 +1,14 @@
 <?php
-include'config.php';
+session_start();
+include('config.php'); // Import PHP file (Config.php)
+
+// Check if user is logged in
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
+}
+
 
 // Check if session ID and partner name are submitted
 if (isset($_POST["session_id"]) && isset($_POST["partner_name"])) {
@@ -92,7 +101,7 @@ mysqli_close($conn);
     <br><br>
     <div class="partner-details">
         <p><strong>About:</strong><?php echo $about; ?></p>
-        <p><strong>Proficiency in English languages:</strong></p>
+        <p><strong>Proficiency in English languages:</strong><?php echo $row_partner_details['level']; ?></p>
         <p><strong>Session Price per hour:</strong></p>
         <div>
            

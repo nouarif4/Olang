@@ -1,7 +1,14 @@
 <?php
-include 'config.php'; // Corrected the include statement
+session_start();
+include('config.php'); // Import PHP file (Config.php)
 
-// Check if form is submitted
+// Check if user is logged in
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $learnerID = $_SESSION['learner_id']; // Assuming learner ID is stored in session

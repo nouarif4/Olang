@@ -1,18 +1,11 @@
 <?php
 session_start();
-
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$conn = mysqli_connect($servername, $username, $password);
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
+include('config.php');
+if (!isset($_SESSION['partner_id'])) {
+  // Redirect to login page or handle unauthorized access
+  header("Location: signinPartner.php");
+  exit();
 }
-
 // Select the database
 $db_selected = mysqli_select_db($conn, $database);
 if (!$db_selected) {

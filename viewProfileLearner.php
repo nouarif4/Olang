@@ -1,17 +1,14 @@
 <?php
 session_start();
+include('config.php'); // Import PHP file (Config.php)
 
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$conn = mysqli_connect($servername, $username, $password);
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
+// Check if user is logged in
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
 }
+
 
 // Select the database
 $db_selected = mysqli_select_db($conn, $database) ;

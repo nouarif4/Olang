@@ -1,17 +1,12 @@
 <?php
 session_start();
 include('config.php');
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-$con = new mysqli($servername, $username, $password, $database);
-
-if (!$con) {
-    die("Database connection failed: " . mysqli_connect_error());
+if (!isset($_SESSION["learner_id"])) {
+    // Redirect user to login page if not logged in
+    header("Location: signinLearner.php");
+    exit();
 }
+
 
 if (isset($_POST['edit'])) {
     $requestID = $_POST['requestID'];

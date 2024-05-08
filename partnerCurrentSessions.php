@@ -1,10 +1,9 @@
 <?php
 // Include your database connection file
-include 'config.php';
 
 // Start session to access session variables
 session_start();
-
+include('config.php');
 // Check if partner is logged in
 if (!isset($_SESSION['partner_id'])) {
     // Redirect to login page or handle unauthorized access
