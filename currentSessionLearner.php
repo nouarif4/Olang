@@ -11,7 +11,7 @@ if (!isset($_SESSION["learner_id"])) {
 
 // Fetch current sessions of the learner
 $learner_id = $_SESSION['learner_id'];
-$sql = "SELECT * FROM sessions WHERE learner_id = $learner_id AND status = 'running'";
+$sql = "SELECT * FROM sessions WHERE learnerID = $learner_id AND status = 'current'";
 $result = mysqli_query($conn, $sql);
 
 // Close prepared statement

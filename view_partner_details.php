@@ -1,33 +1,27 @@
 <?php
-include'config.php';
+include('config.php');
 
-// Check if session ID and partner name are submitted
 if (isset($_POST["session_id"]) && isset($_POST["partner_name"])) {
     // Retrieve session ID and partner name
     $session_id = $_POST["session_id"];
     $partner_name = $_POST["partner_name"];
 
-    // Fetch partner ID from sessions table using session ID
     $sql_partner_id = "SELECT partnerID FROM session WHERE sessionID = '$session_id'";
     $result_partner_id = mysqli_query($conn, $sql_partner_id);
     $row_partner_id = mysqli_fetch_assoc($result_partner_id);
     $partner_id = $row_partner_id['partnerID'];
 
-    // Fetch partner details from partner table using partner ID
     $sql_partner_details = "SELECT * FROM partner WHERE partnerID = '$partner_id'";
     $result_partner_details = mysqli_query($conn, $sql_partner_details);
     $row_partner_details = mysqli_fetch_assoc($result_partner_details);
     $about = $row_partner_details['bio'];
 
-    // Fetch reviews for the partner from the reviews table
     $sql_reviews = "SELECT * FROM reviews WHERE partnerID = '$partner_id'";
     $result_reviews = mysqli_query($conn, $sql_reviews);
     $profile_picture_blob = $row_partner_details['photo'];
-    // Convert blob data to base64 format
     $profile_picture_base64 = base64_encode($profile_picture_blob);
 }
 
-// Close database connection
 mysqli_close($conn);
 ?>
 
