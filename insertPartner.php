@@ -1,6 +1,5 @@
 <?php
-session_start();
-include('config.php');
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -38,7 +37,7 @@ if(isset($_POST['submit'])) {
         echo "Error: " . $e->getMessage();
     }
 
-    header("Location: homePagePartner (1).html");
+    header("Location: signinPartner.php");
     exit();
 }
 

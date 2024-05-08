@@ -1,12 +1,13 @@
 <!-- signInPartner.html -->
 <?php
 session_start();
-include('config.php');
-// Check if partner is logged in
-if (!isset($_SESSION['partner_id'])) {
-    // Redirect to login page or handle unauthorized access
-    header("Location: signinPartner.php");
-    exit();
+
+
+$connection = mysqli_connect(host, username, password, database);
+
+
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
 
 $message = '';
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $partner_id = $row['ID']; // Assuming 'partner_id' is the column name in your database
+        $partner_id = $row['partnerID']; // Assuming 'partner_id' is the column name in your database
 
         // Set the partner ID in the session variable
         $_SESSION['partner_id'] = $partner_id;

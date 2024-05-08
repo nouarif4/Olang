@@ -1,15 +1,12 @@
 <?php
 session_start();
-include('config.php'); // Import PHP file (Config.php)
 
-// Check if user is logged in
-if (!isset($_SESSION["learner_id"])) {
-    // Redirect user to login page if not logged in
-    header("Location: signinLearner.php");
-    exit();
+$connection = mysqli_connect(host, username, password, olang);
+
+
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
-
-//
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
@@ -23,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) > 0) {
         
         $row = mysqli_fetch_assoc($result);
-        $partner_id = $row['ID']; // Assuming 'partner_id' is the column name in your database
+        $partner_id = $row['learnerID']; // Assuming 'partner_id' is the column name in your database
 
         // Set the partner ID in the session variable
         $_SESSION['partner_id'] = $partner_id;
@@ -70,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Sign In</button>
+        <button type="submit" name="submit">Sign In</button>
     </form>
 
     <?php if (isset($message)) { ?>

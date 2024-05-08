@@ -1,16 +1,25 @@
 <?php
 session_start();
 include('config.php');
-if (!isset($_SESSION['partner_id'])) {
-  // Redirect to login page or handle unauthorized access
-  header("Location: signinPartner.php");
-  exit();
+
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "olang";
+
+// Connect to the database
+$con = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 
 // Fetch requests from the database
 $partnerID = $_SESSION['partnerID'];
-$sql = "SELECT * FROM request WHERE partnerID = $partnerID";
+$sql = "SELECT * FROM request WHERE partner_id = $partnerID";
 $result = mysqli_query($conn, $sql);
 
 mysqli_close($conn);
