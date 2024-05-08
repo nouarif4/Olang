@@ -31,9 +31,9 @@ mysqli_close($conn);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Browse Requests</title>
+  <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="request.css">
   <link rel="stylesheet" href="styleLearner.css">
-  <link rel="stylesheet" href="navbar2.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
