@@ -1,22 +1,9 @@
 <?php
 session_start();
-
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include('config.php'); // Import PHP file (Config.php)
 
 // Check if user is logged in
-if (!isset($_SESSION["ID"])) {
+if (!isset($_SESSION["learner_id"])) {
     // Redirect user to login page if not logged in
     header("Location: signinLearner.php");
     exit();
@@ -24,11 +11,14 @@ if (!isset($_SESSION["ID"])) {
 
 // Fetch current sessions of the learner
 $learner_id = $_SESSION['learner_id'];
-$sql = "SELECT * FROM sessions WHERE learner_id = $learner_id AND status = 'running'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM session WHERE learner_id = ? AND status = 'current'";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $learner_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-// Close database connection
-mysqli_close($conn);
+// Close prepared statement
+$stmt->close();
 ?>
 
 <!DOCTYPE html>

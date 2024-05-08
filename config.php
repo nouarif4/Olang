@@ -1,10 +1,15 @@
 
 <!-- config.php -->
 <?php
-$con = mysqli_connect("localhost", "root", "", "olang");
-$database= mysqli_select_db($con, "olang");
+$host = 'localhost';
+$dbname = 'olang';
+$username = 'olang';
+$password = 'Olang@123123';
 
-if (!$con) 
-die("Connection failed: " . mysqli_connect_error());
-
-?>
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'Connected to the database successfully!';
+} catch (PDOException $e) {
+    echo 'Error connecting to the database: ' . $e->getMessage();
+}?>
