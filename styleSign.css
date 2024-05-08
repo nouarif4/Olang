@@ -213,24 +213,6 @@ input, select, textarea {
   border-radius: 4px;
 }
 
-button {
-  height: 40px;
-  width: 100%;
-  margin: 4px 0;
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  background-color: #387454;
-  color: #f2f4f9;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-button:hover {
-  background-color: #6FBD57;
-}
-
 
 a {
   text-decoration: none; 
@@ -258,4 +240,115 @@ h3{
   color: #3e3e3f;
   margin-top:20px;
 
+}
+
+
+.navbar {
+  background-color: #f2f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure navbar spans the full width of the viewport */
+  position: fixed; /* Fixed positioning to keep it at the top */
+  top: 0;
+  z-index: 1000; 
+}
+
+
+
+footer {
+  clear: both; /* Clear floats to ensure the footer stays below other elements */
+  position: relative; /* Set position to relative */
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #212122;
+  color: #f2f4f9;
+  padding-top: 15px;
+  margin-top: auto; /* Push footer to the end of the page */
+}
+
+
+
+
+
+.navbar .nav-links {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  position: relative;
+  font-family: "Prompt";
+  top:10px;
+  font-size: 20px;
+  gap: 20px; /* Add this line to increase spacing between nav links */
+}
+
+
+.navbar .nav-links h6 {
+  margin: 0 10px  /* Adjusted margin for better spacing */
+}
+
+
+.navbar .nav-links h6 a {
+  text-decoration: none;
+  color: #387454;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links h6 a:hover{
+  color: #6fbd57;
+}
+
+
+
+.olanglogo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 20px;
+  left:30px;
+  object-fit: cover;
+  margin-right: auto;
+}
+
+
+
+.navbar .nav-links h6 {
+  margin: 0 10px 10px; /* Adjusted margin for better spacing */
+}
+
+
+.olang {
+  position: absolute;
+  /* width: 220px;
+  height: 90px; */
+  top: 16px;
+  left: 120px;
+  font-family: "Prompt";
+  font-weight: 700;
+  color: #212122;
+  font-size: 40px;
+  text-align: center;
+}
+
+
+button {
+  height: 40px;
+  width: 150px;
+  margin: 4px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  background-color: #387454;
+  color: #f2f4f9;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #6FBD57;
 }

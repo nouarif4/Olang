@@ -2,20 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Prompt&family=Quicksand:wght@400;700&family=Yusei+Magic&display=swap');
 
-.olanglogo {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  top: 10px;
-  left:10px;
-  object-fit: cover;
-}
-
-
-body, h1, p, ul, li {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  background: linear-gradient(#d66f1b, #f2f4f9);
+  margin: 0; /* Ensure no default margin */
+  padding: 0; /* Ensure no default padding */
 }
 
 h3{   
@@ -25,20 +28,7 @@ h3{
   color: #387454;
 
 }
-
-body {
-  font-family: 'Quicksand';
-  justify-content: center;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  height: 180vh;
-  background: linear-gradient(#d66f1b 0%, #F2F4F9 100%);
-  
-}
+ 
 /*body {
   display: flex;
   flex-direction: column;
@@ -118,11 +108,18 @@ header {
 
 .form-container {
     max-width: 400px;
-    margin: 45px;
+    margin-top: 100px;
     margin-left: 5%;
     padding: 20px;
     background-color: #f2f4f9;
     border-radius: 5px;
+    padding: 50px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
     
   }
 
@@ -176,42 +173,7 @@ header {
     background-color: #6FBD57;
   }
 
-  footer {
-    clear: both; /* Clear floats to ensure the footer stays below other elements */
-    position: relative; /* Set position to relative */
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background: #212122;
-    color: #f2f4f9;
-    padding-top: 15px;
-    margin-top: auto; /* Push footer to the end of the page */
-  }
   
-  
-.olanglogo {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50px;
-    left:80px;
-    object-fit: cover;
-  }
-  
-  
-  
-   .olang {
-    position: absolute;
-    width: 220px;
-    height: 90px;
-    top: 40px;
-    left: 140px;
-    font-family: "Prompt";
-    font-weight: 700;
-    color: #212122;
-    font-size: 40px;
-    text-align: center;
-  }
   
   
   button{
@@ -229,13 +191,24 @@ header {
     text-transform: uppercase;
     text-align: center;
     justify-content: center;
-    color: #000000;
     background-color: #387454;
     font-family: "Prompt";  
     font-weight:600;
+    color: #6FBD57;
+
   }
   
   
+  form {
+    background-color: #f2f4f9;
+    padding: 50px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
   
   button:hover{
       color: #f2f4f9;
@@ -250,59 +223,6 @@ header {
     left: 1040px;
   }
   
-
-
-
-
-
-
-
-  
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 35px;
-  background-color: white;
-  padding: 10px;
-  list-style: none;
-  margin: 0;
-  width:150px;
-  height: 100px;
-  border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.profile-dropdown:hover .dropdown-menu {
-  display: block;
-  color: #00391b;
-}
-.profile-picture10 {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  position: absolute;
-  left: 1200px;
-  top: 58px;
-}
-
-.circular-image10 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border: 2.5px solid #ea6a40;
-  
-}
-nav {
-  background-color: #f2f2f2;
-  width: 100%;
-  height: 15%;
-
-}
-
-
 
 
 

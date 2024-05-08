@@ -208,7 +208,7 @@ button{
 button:hover {
   background-color: #6FBD57;
 }
-/* 
+/
 .-actions {
   color: black;
 }
@@ -219,7 +219,7 @@ button:hover {
 
 .reject-button:hover {
   background-color: #ff9595 ;
-} */
+} 
 
 .button-cancel {
   background-color: red ;
@@ -236,5 +236,5 @@ main {
 
 
 .navbar .nav-links h6 {
-  margin: 0 10px 10px; /* Adjusted margin for better spacing */
+  margin: 0 10px 10px; 
 }

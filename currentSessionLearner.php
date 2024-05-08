@@ -1,22 +1,9 @@
 <?php
 session_start();
-
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include('config.php'); // Import PHP file (Config.php)
 
 // Check if user is logged in
-if (!isset($_SESSION["ID"])) {
+if (!isset($_SESSION["learner_id"])) {
     // Redirect user to login page if not logged in
     header("Location: signinLearner.php");
     exit();
@@ -24,11 +11,11 @@ if (!isset($_SESSION["ID"])) {
 
 // Fetch current sessions of the learner
 $learner_id = $_SESSION['learner_id'];
-$sql = "SELECT * FROM sessions WHERE learnerID = $learner_id AND status = 'running'";
+$sql = "SELECT * FROM sessions WHERE learner_id = $learner_id AND status = 'running'";
 $result = mysqli_query($conn, $sql);
 
-// Close database connection
-mysqli_close($conn);
+// Close prepared statement
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -36,11 +23,10 @@ mysqli_close($conn);
 <head>
     <meta charset="utf-8" />
     <title>Olang</title>
-    
+    <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="home view profile.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   
-    <link rel="stylesheet" href="navbar.css" />
+
     <link rel="stylesheet" href="sessionsDesignPreviousAndCurrent.css" />
     
 </head>
