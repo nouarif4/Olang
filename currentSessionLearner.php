@@ -24,7 +24,7 @@ if (!isset($_SESSION["ID"])) {
 
 // Fetch current sessions of the learner
 $learner_id = $_SESSION['learner_id'];
-$sql = "SELECT * FROM sessions WHERE learner_id = $learner_id AND status = 'running'";
+$sql = "SELECT * FROM sessions WHERE learnerID = $learner_id AND status = 'running'";
 $result = mysqli_query($conn, $sql);
 
 // Close database connection
@@ -82,7 +82,11 @@ mysqli_close($conn);
                     <p><strong>Partner Name</strong>: <?php echo $row['partner_name']; ?></p>
                     <p><strong>Date</strong>: <?php echo $row['date']; ?></p>
                     <p><strong>Time</strong>: <?php echo $row['time']; ?></p>
-                    <a href="viewPartnerdetails.html"><button class="viewpartner6 button8">View Partner</button></a>
+                    <form action="view_partner_details.php" method="post">
+                        <input type="hidden" name="partner_name" value="<?php echo $row['partner_name']; ?>">
+                        <input type="hidden" name="session_id" value="<?php echo $row['session_id']; ?>">
+                        <button type="submit" class="viewpartner6 button8">View Partner</button>
+                    </form>
                 </div>
             </td>
         </tr>
