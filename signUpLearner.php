@@ -1,5 +1,5 @@
 <!-- signUpLearner.php -->
-<!-- <?php
+ <?php
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -29,7 +29,7 @@ function handleFormSubmission($connection)
 
     if ($result) {
         // Redirect to homePageLearner.html
-        header("Location: homePageLearner.html");
+        header("Location: signinLearner.php");
         exit();
     } else {
         // Error message
@@ -107,4 +107,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         &copy; Olang, 2024
     </footer>
 </body>
-</html> -->
+</html> 

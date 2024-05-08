@@ -2,8 +2,7 @@
 <?php
 session_start();
 
-
-$connection = mysqli_connect(host, username, password, database);
+include('config.php');
 
 
 if (!$connection) {
@@ -25,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $partner_id = $row['ID']; // Assuming 'partner_id' is the column name in your database
+        $partner_id = $row['partnerID']; // Assuming 'partner_id' is the column name in your database
 
         // Set the partner ID in the session variable
         $_SESSION['partner_id'] = $partner_id;

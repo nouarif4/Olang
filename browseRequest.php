@@ -1,16 +1,6 @@
 <?php
 session_start();
 include('config.php');
-
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "olang";
-
-// Connect to the database
-$con = mysqli_connect($servername, $username, $password, $database);
-
 // Check connection
 if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
@@ -18,7 +8,7 @@ if (!$con) {
 
 // Fetch requests from the database
 $partnerID = $_SESSION['partnerID'];
-$sql = "SELECT * FROM request WHERE partnerID = $partnerID";
+$sql = "SELECT * FROM request WHERE partner_id = $partnerID";
 $result = mysqli_query($conn, $sql);
 
 mysqli_close($conn);
