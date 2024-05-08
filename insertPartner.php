@@ -1,5 +1,4 @@
-
- <?php
+<?php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -12,13 +11,8 @@ function validateInput($data) {
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-  }
+}
 
-
-  echo "First Name: " . $firstName . "<br>";
-  echo "Last Name: " . $lastName . "<br>";
-  // Output other form field values similarly
-  
 if(isset($_POST['submit'])) {
     $firstName = validateInput($_POST["firstName"]);
     $lastName = validateInput($_POST["lastName"]);
@@ -29,18 +23,20 @@ if(isset($_POST['submit'])) {
     $phoneNumber = validateInput($_POST["phoneNumber"]);
     $bio = validateInput($_POST["bio"]);
     $city = validateInput($_POST["city"]);
-    echo "First Name: " . $firstName . "<br>";
-echo "Last Name: " . $lastName . "<br>";
-// Output other form field values similarly
-    $query = mysqli_query($con, "INSERT INTO partner (`firstName`, `lastName`, `email`, `password`, `city`, `age`, `gender`, `bio`, `phone`) 
-    VALUES ('$firstName', '$lastName', '$email', '$password', '$city', '$age', '$gender', '$bio', '$phoneNumber')");
-if ($query) {
-    echo "Data inserted successfully";
-} else {
-    echo "Error: " . mysqli_error($con);
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO partner (firstName, lastName, email, password, city, age, gender, bio, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$firstName, $lastName, $email, $password, $city, $age, $gender, $bio, $phoneNumber]);
+
+        echo "Data inserted successfully";
+    } catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+
+    header("Location: homePagePartner (1).html");
+    exit();
 }
-header("Location: homePagePartner (1).html");
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +61,7 @@ header("Location: homePagePartner (1).html");
     </div>
 
     <form id="PSignupForm"  method="POST">
-        <center><h2>Welcome Partner ! </h2></center>
+        <center><h2>Welcome Partner! </h2></center>
         <center><h3>Please fill the follow to sign up </h3></center>
         <br>
         <label for="firstName">First Name *</label>
@@ -126,7 +122,7 @@ header("Location: homePagePartner (1).html");
         <label for="city">City *</label>
         <input type="text" id="city" name="city" required><br>
 
-        <button type="submit"> <a href="homePagePartner.html" id="submit"disabled >Sign Up </a> </button>
+        <button type="submit" name="submit">Sign Up</button>
     </form>
 
     <footer class="footer">
@@ -162,5 +158,3 @@ header("Location: homePagePartner (1).html");
     
 </body>
 </html>
-
-
